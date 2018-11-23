@@ -1,0 +1,35 @@
+<ion-content background class="vertical-align-content background">
+    <div class="hue"> 
+    <ion-grid>
+        <ion-row>
+            <ion-col text-center col-12 padding>
+                <h1>La Batanga</h1>
+                <span>Todo lo que necesitas para tu evento</span>
+            </ion-col>
+        </ion-row>
+        <ion-row  padding class="bottom">
+            <ion-col>
+                <ion-list>
+                    <ion-item class="back-nothing">
+                        <button ion-button color="primary" block large (click)="goToLogin()">Iniciar sesi&oacute;n con email</button>
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col text-center>
+                <h3>Registrate</h3>
+                <div text-center>
+                    <a href="#" block color="black" (click)="goToRegister()">
+                        Como Usuario
+                    </a>
+                    |
+                    <a href="#" block color="black" (click)="goToRegPro()">
+                        Como Proveedor
+                    </a>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid> 
+</div>
+</ion-content>

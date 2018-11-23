@@ -1,0 +1,33 @@
+.vertical-align-content > *
+{
+     display: flex!important;
+     align-content: center!important;
+     color:#ffffff;
+     text-shadow: #000000 2px 5px 10px;
+}
+a{
+    color:#ffffff;
+    text-decoration: none;
+}
+.bottom{
+    display: flex!important;
+    align-content: bottom!important;
+    align-items: bottom!important;
+    margin-top: 70%;
+}
+.background{ 
+    background-image:url('./../assets/imgs/background.jpg');
+    background-size: 100%; 
+}
+.back-nothing{
+    background: none;
+}
+
+.hue{
+    background-color: rgba(132, 0, 255, 0.5);
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+   position: absolute;
+}

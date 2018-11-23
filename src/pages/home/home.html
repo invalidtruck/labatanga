@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Ultimos Contratados</ion-title>
+  </ion-navbar> 
+</ion-header> 
+<ion-content padding>
+  <ion-grid>
+    <ion-row *ngFor="let prov of latestProviders|async">
+      <ion-col width-50>
+          <ion-card style="border-left: 3px solid #ffae00"  (click)="OnClickProv(prov)">
+            <ion-row>
+              <ion-col width-80>
+                <strong> {{prov.Name}}</strong>
+              </ion-col> 
+            </ion-row> 
+          <ion-card-content>
+            Ultima contratación en {{prov.Created_on|  date: 'dd MMM yy'}}
+          </ion-card-content>
+        </ion-card> 
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

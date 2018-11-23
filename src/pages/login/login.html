@@ -1,0 +1,71 @@
+<!-- <ion-content  margin-vertical padding-vertical padding class="backgroundi-img bg">
+  <div text-center> 
+   </div>
+  <ion-list>
+    <ion-item>
+      <ion-label floating> Correo Electronico</ion-label>
+      <ion-input type="text" value="invalidtruck@msn.com" #Email></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Contraseña</ion-label>
+      <ion-input type="password" #Password value="123456"> </ion-input>
+    </ion-item>
+
+  </ion-list> 
+  <ion-footer>
+    <ion-toolbar>
+      <div text-center> 
+        <a href="#" color="primary" (click)="GoToForget();" >¿Olvidaste tu Contraseña?</a>
+      </div>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content> -->
+<ion-content class="bg background">
+  <form [formGroup]="formgroup">
+    <div class="hue">
+      <!-- <h1>LA BATANGA</h1>  -->
+      <ion-card>
+        <ion-card-header>
+          Iniciar Sesión
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list no-lines>
+            <ion-item>
+              <ion-label floating color="primary">Correo Electrónico</ion-label>
+              <ion-input color="primary" type="email"  formControlName="Email"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label floating color="primary">Contraseña</ion-label>
+              <ion-input color="primary" type="password" formControlName="Password"></ion-input>
+            </ion-item>
+            <ion-item>
+              <p>¿Olvidaste tu Contraseña?
+                <a (click)="GoToForget();"> Presiona aqui</a>
+              </p>
+            </ion-item>
+
+            <button ion-button round block color="primary" [disabled]="!formgroup.valid" (click)="GoToLogin();">Loguearse</button>
+            <button ion-button round block color="primary"  (click)="GoToLoginDebug();">Debug</button>
+          </ion-list>
+          <!-- <b>OR</b>
+        <ion-row>
+          <ion-col>
+            <button ion-button icon-left block>
+          <ion-icon name="logo-facebook"></ion-icon>
+          <div>login with facebook</div>
+        </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button icon-left color="danger" block>
+          <ion-icon name="logo-google"></ion-icon>
+          <div>login with Google</div>
+        </button>
+          </ion-col>
+        </ion-row>
+   -->
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </form>
+</ion-content>

@@ -1,0 +1,59 @@
+page-login{
+  
+ a{
+     color: black;
+ }
+  input{
+      color: rgb(19, 0, 0);
+  }
+ .bg { 
+     background: linear-gradient(250deg,#ffffff, #efefef, 
+     #e8e8e8,#ffffff, #fafafa);
+     background-size: 400% 400%;
+     animation: colorchange 15s ease-out infinite;
+    }
+
+ 
+
+@keyframes colorchange {
+    0%{background-position: 0% 300%}
+    50%{background-position: 150% 1%}
+    100%{background-position: 10% 300%}
+}
+
+.background{ 
+    background-image:url('./../assets/imgs/background.jpg');
+    background-size: 100%; 
+   
+}
+ 
+      .scroll-content {
+        /*align-content: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;*/
+        text-align: center;
+      }
+      ion-card.card {
+        margin: 50% auto;
+        box-shadow: none;
+        background-color: rgba(250, 250, 254, 0.8px);
+        border-radius: 10px;
+        z-index: 100;
+        
+      }
+      .item {
+        background: rgba(232, 230, 230, 0px);
+        border: medium none;
+      }
+      ion-input {
+        border-bottom: #FD4D73 solid 1px;
+        color: primary;
+      }
+      h1{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 3em;
+        font-weight: lighter;
+        color: #fff;
+      }
+}

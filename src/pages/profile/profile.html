@@ -1,0 +1,129 @@
+<ion-header>
+  <ion-navbar hideBackButton="true" color="primary">
+     
+
+    <ion-title>Perfil</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="saveProfile(user)">
+        <ion-icon name="md-cloud-upload"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding color="black">
+  <!-- <div id="profile-bg" [style.backgroundImage]="'url(' + (user|async)?.images?.two + ')' "></div> -->
+  <div id="profile-bg" style="background:url('../assets/imgs/profile/back-user2.png'); background-size: cover;"></div>
+  <div id="content">
+    <div id="profile-info">
+      <img id="profile-image" [src]="(user|async)?.img">
+      <h3 id="profile-name">
+        {{ (user | async)?.FirstName + ' ' +(user | async)?.LastName + ' '+ (user | async)?.LastName2 }}
+      </h3>
+      <h4>
+          <ion-icon name="mail"></ion-icon> {{ (user | async)?.Email }}
+      </h4>
+      <h4>
+          <ion-icon name="phone"></ion-icon>{{ (user | async)?.Phone }} 
+      </h4>
+    </div>
+    <div>
+      <ion-grid>
+        <ion-row style="text-align: center;color:#000">
+          <ion-col>
+            <label>
+              {{ getCountContracted((user | async)?.Contracted)}}
+            </label>
+            <br>
+            <label>
+              Contrataciones
+            </label>
+          </ion-col>
+          <ion-col>
+            <label>
+              {{getComments((user | async)?.Comments)}}
+            </label>
+            <br>
+            <label>
+              Comentarios
+            </label>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+
+  <!-- 
+  <ion-grid>
+    <ion-row class="text-center">
+      <ion-col col-4> 
+      </ion-col>
+      <ion-col col-4>
+        <img src="{{(user|async)?.img}}" alt="" class="profile-img">
+      </ion-col>
+      <ion-col col-4> 
+      </ion-col>
+    </ion-row>
+    <ion-row class="text-center">
+      <ion-col></ion-col>
+      <ion-col col-10>
+        <h4>{{ (user | async)?.FirstName + ' ' +(user | async)?.LastName + ' '+ (user | async)?.LastName2 }}</h4>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+    <ion-row class="text-center">
+      <ion-col col-2></ion-col>
+      <ion-col col-8>
+        <ion-icon name="mail"></ion-icon> {{ (user | async)?.Email }}
+      </ion-col>
+      <ion-col col-2>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-2></ion-col>
+      <ion-col col-8 class="text-center">
+          <ion-icon name="phone"></ion-icon>
+          <ion-input type="text" [ngModel]="(user | async)?.Phone" ></ion-input>
+       
+      </ion-col>
+      <ion-col col-2></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col col-10>
+        <!-- <button ion-button block color="black" (click)="goToDetails(user)">Más Detalle</button> 
+      
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row> 
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <div class="rounded-last-view" *ngFor="let prov of  getProviders((user|async)?.LastView) |async" >
+          {{(prov|async)?.CompanyName}} 
+         </div> 
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content> 
+<ion-footer>
+  <div color="black" >
+    <ion-row>
+      <ion-col text-center>
+        <div class="primary">
+        <h5>{{ getCountContracted((user | async)?.Contracted) }}</h5>
+        </div>
+        Contrataciones
+      </ion-col>
+      <ion-col></ion-col>
+      <ion-col text-center>
+        <div>
+         <h5>{{ getComments((user | async)?.Comments) }}</h5>
+        </div>
+        Comentarios
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-footer> -->

@@ -1,0 +1,14 @@
+page-list {
+
+}
+.no-rating{
+    content: 'sin rating'
+}
+.text-description {
+    // overflow: hidden; /* to hide anything that doesn't fit in the containing element. */
+    // white-space: nowrap; /* to make sure the line doesn't break when it is longer than the containing div. */
+    // text-overflow: ellipsis; /* to do what you want. */
+    width: 100%;
+    font-size: 1.5vh
+}
+ 

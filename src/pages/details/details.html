@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{(Provider|async)?.CompanyName}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+
+  <ion-slides pager autoplay="5000" loop="true" speed="3000">
+    <ion-slide style="background-image:url('http://c8.alamy.com/comp/D031R1/seamless-background-pattern-with-various-drinks-cocktails-abstract-D031R1.jpg')">
+    </ion-slide>
+    <ion-slide style="background-image:url('https://lanocheenvino.com/wp-content/uploads/home-vinoteca-murillo-02.jpg');">
+    </ion-slide>
+  </ion-slides>
+  <ion-item class="transparency item-rating" style="    margin-top: -60px;z-index: 1000;">
+
+      <ion-row>
+        <ion-col>
+          <span color="primary" icon-left clear nopadding *ngFor="let classname of createRating( (Provider | async)?.rating); let currindex = index"
+            (click)="RateProvider(currindex)">
+            <ion-icon color="yellow" name="{{classname}}"></ion-icon>
+          </span>
+        </ion-col>
+        <ion-col>
+          <span icon-rigth clear large style="color:#fff;float: right;" (click)="OnClickComments()">
+  
+            <ion-icon name="text"></ion-icon>
+            <span color="primary" style="width: 100%; text-align: right">
+              {{ getTotalComments((Provider | async)?.Comments) }}</span>
+          </span>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  <button ion-button full color="primary" (click)="onContract((prove))" floating>Contratar</button>
+  <!-- <ion-item>
+        <h2>
+            {{(Provider|async)?.CompanyName}}
+        </h2>
+    </ion-item> -->
+
+
+</ion-content>

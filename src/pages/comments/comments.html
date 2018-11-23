@@ -1,0 +1,25 @@
+<!--
+  Generated template for the CommentsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header> 
+  <ion-navbar color="primary">
+    <ion-title>Comentarios</ion-title>
+  </ion-navbar> 
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor="let  com of Comments |async" color="light">
+      <ion-card-header>
+          <strong> {{(com.user|async)?.FirstName + " " + (com.user|async)?.LastName }} </strong> 
+          <ion-badge style="font-size:50%" float-right>{{com.time| timeAgo}}</ion-badge>
+         
+      </ion-card-header>
+    <ion-card-content text-wrap> 
+      {{com.comment}} 
+    </ion-card-content>
+  
+  </ion-card> 
+</ion-content>

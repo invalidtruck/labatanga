@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Registrarse</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <form [formGroup]="formgroup" (ngSubmit)="registerEvent()">
+    <ion-list>
+      <ion-item>
+        <ion-label color="primary" floating>Correo Electrónico</ion-label>
+        <ion-input value="" type="email" formControlName="Email"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="Email.errors && Email.dirty">
+        <p *ngIf="Email.hasError('required')">El Campo es requerido</p>
+        <p *ngIf="Email.hasError('email')">El Correo debe ser valido </p>
+        <p *ngIf="Email.hasError('invalid')">El Campo es requerido</p>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" floating>Nombre(s)</ion-label>
+        <ion-input value="" type="text" formControlName="Name"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="Name.errors && Name.dirty">
+        <p *ngIf="Name.hasError('required')">El Campo es requerido</p>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" floating>Apellido Paterno</ion-label>
+        <ion-input value="" type="text" formControlName="LastName"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="LastName.errors && LastName.dirty">
+        <p *ngIf="LastName.hasError('required')">El Campo es requerido</p>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" floating>Apellido Materno</ion-label>
+        <ion-input value="" type="text" formControlName="LastName2"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="LastName2.errors && LastName2.dirty">
+        <p *ngIf="LastName2.hasError('required')">El Campo es requerido</p>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" floating>Celular/Telefono</ion-label>
+        <ion-input value="" type="tel" formControlName="Phone"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="Phone.errors && Phone.dirty">
+        <p *ngIf="Phone.hasError('required')">El Campo es requerido</p>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" floating>
+          Genero
+        </ion-label>
+        <ion-select formControlName="Gender">
+          <ion-option value="M">Hombre</ion-option>
+          <ion-option value="F">Mujer</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item *ngIf="Gender.errors && Gender.dirty">
+        <p *ngIf="Gender.hasError('required')">El Campo es requerido</p>
+      </ion-item>
+      <ion-item>
+        <ion-label>Fecha de Nacimiento</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY" formControlName="BirthDate"></ion-datetime>
+      </ion-item>
+      <ion-item *ngIf="BirthDate.errors && BirthDate.dirty">
+        <p *ngIf="BirthDate.hasError('required')">El Campo es requerido</p>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" floating>Contraseña</ion-label>
+        <ion-input type="password" formControlName="Password" [pattern]="PASSWORD_REGEX"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="Password.errors && Password.dirty">
+        <p *ngIf="Password.hasError('pattern')">El Campo debe tener almenos una letra mayuscula un numero y un caracter especial</p>
+        <p *ngIf="Password.hasError('required')">El Campo es requerido</p>
+        <p *ngIf="Password.hasError('minlength')">El minimo de caracteres es 8</p>
+        <p *ngIf="Password.hasError('maxlength')">El maximo de caracteres es 12</p>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" floating>Confirmar Contraseña</ion-label>
+        <ion-input type="password" formControlName="PasswordConfirm"></ion-input>
+      </ion-item>
+
+    </ion-list>
+    <div padding>
+      <!-- <button ion-button block color="black" (click)="registerEvent();">Registrarse</button> -->
+      <button ion-button full color="primary" [disabled]="!formgroup.valid" style="margin-top: 20px;" type="submit">Registrarse</button>
+
+    </div>
+  </form>
+</ion-content>

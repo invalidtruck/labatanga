@@ -1,0 +1,208 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Registrar Proveedor</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <form [formGroup]="formgroup" (ngSubmit)="registerEvent()" >
+    <ion-list>
+      <h3> Datos del Proveedor</h3>
+      <ion-item>
+        <ion-label color="primary" floating>
+          Razon Social
+        </ion-label>
+        <ion-input type="text" formControlName="FirstName"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="FirstName.errors && FirstName.dirty">
+        <p *ngIf="FirstName.hasError('required')">El Campo es requerido</p>
+        <p *ngIf="FirstName.hasError('minlength')">minimo de 3 caracteres</p>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" floating>Nombre Comercial</ion-label>
+        <ion-input type="text" formControlName="CompanyName"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="CompanyName.errors && CompanyName.dirty">
+        <p *ngIf="CompanyName.hasError('required')">El Campo es requerido</p>
+        <p *ngIf="CompanyName.hasError('minlength')">minimo de 3 caracteres</p>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" floating>Descripción</ion-label>
+        <ion-input type="text" formControlName="Description"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="Description.errors && Description.dirty">
+        <p *ngIf="Description.hasError('required')">El Campo es requerido</p>
+        <p *ngIf="Description.hasError('minlength')">minimo de 15 caracteres</p>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" floating>
+          Teléfono
+        </ion-label>
+        <ion-input ion-input type="tel" formControlName="Phone"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="Phone.errors && Phone.dirty">
+        <p *ngIf="Phone.hasError('pattern')">Debe ser numerico y debe ser de 10 digitos</p>
+        <p *ngIf="Phone.hasError('required')">El Campo es requerido</p>
+        <p *ngIf="Phone.hasError('minlength')">minimo de 10 caracteres</p>
+      </ion-item>
+
+      <h3>
+        Dirección
+      </h3>
+      <ion-item>
+        <ion-label color="primary" floating>
+          Calle
+        </ion-label>
+        <ion-input type="text" formControlName="Address"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="Address.errors && Address.dirty">
+        <p *ngIf="Address.hasError('required')">El Campo es requerido</p>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" floating>
+          Numero Exterior
+        </ion-label>
+        <ion-input ion-input type="number" formControlName="NoExt"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="NoExt.errors && NoExt.dirty">
+        <p *ngIf="NoExt.hasError('required')">El Campo es requerido</p>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" floating>Numero Interior</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" floating>Código Postal</ion-label>
+        <ion-input ion-input type="number" formControlName="CP"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="CP.errors && CP.dirty">
+        <p *ngIf="CP.hasError('required')">El Campo es requerido</p>
+        <p *ngIf="CP.hasError('pattern')">Debe ser un formato valido </p>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" floating>
+          Estado
+        </ion-label>
+        <ion-select formControlName="State" (ionChange)="getCities($event)">
+          <ion-option *ngFor="let item of States|async" [value]="item.key">{{item.payload.val().name}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item *ngIf="State.errors && State.dirty">
+        <p *ngIf="State.hasError('required')">El Campo es requerido</p>
+      </ion-item>
+      <ion-item *ngIf="State!=null">
+        <ion-label color="primary" floating>
+          Ciudad
+        </ion-label>
+        <ion-select formControlName="City">
+          <ion-option *ngFor="let item of Cities|async" [value]="item.key">{{item.payload.val().name}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item *ngIf="City.errors && City.dirty">
+        <p *ngIf="City.hasError('required')">El Campo es requerido</p>
+      </ion-item>
+      <h3>
+        Redes Sociales
+      </h3>
+      <ion-item>
+        <ion-label color="primary" floating>
+          <ion-icon color="facebook" name="logo-facebook"></ion-icon>
+          Facebook</ion-label>
+        <ion-input ion-input type="url"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" floating>
+          <ion-icon color="whatsapp" name="logo-whatsapp"></ion-icon>
+          WhatsApp
+        </ion-label>
+        <ion-input ion-input type="tel"></ion-input>
+      </ion-item>
+      <h3>
+        Datos de Contacto
+      </h3>
+      <ion-item>
+        <ion-label color="primary" floating>Nombre(s)</ion-label>
+        <ion-input type="text" formControlName="Name"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="Name.errors && Name.dirty">
+        <p *ngIf="Name.hasError('required')">El Campo es requerido</p>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" floating>Apellido Paterno</ion-label>
+        <ion-input type="text" formControlName="LastName"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="LastName.errors && LastName.dirty">
+        <p *ngIf="LastName.hasError('required')">El Campo es requerido</p>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" floating>Apellido Materno</ion-label>
+        <ion-input type="text" formControlName="LastName2"></ion-input>
+      </ion-item>
+      <h3>
+        Datos de Acceso
+      </h3>
+      <ion-item>
+        <ion-label color="primary" floating>Correo Eléctronico</ion-label>
+        <ion-input type="email" formControlName="Email" required validateEqual="EmailConfirm" reverse="true"></ion-input>
+        <ion-item *ngIf="Email.errors && Email.dirty">
+          <p *ngIf="Email.hasError('required')">El campo es requerido</p>
+          <p *ngIf="Email.hasError('email')">El Correo debe ser valido </p>
+        </ion-item>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" floating>Confirmar Correo Eléctronico</ion-label>
+        <ion-input type="email" formControlName="EmailConfirm" required validateEqual="Email" reverse="true"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="Email.errors && Email.dirty">
+        <p *ngIf="Email.value != formgroup.get('EmailConfirm').value">Debe ser igual al campo Correo Electrónico </p>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" floating>Contraseña</ion-label>
+        <ion-input type="password" [pattern]="PASSWORD_REGEX" formControlName="Password"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="Password.errors && Password.dirty">
+        <p *ngIf="Password.hasError('required')">El campo es requerido</p>
+        <p *ngIf="Password.hasError('minlength')">Debe tener minimo 8 caracteres</p>
+        <p *ngIf="Password.hasError('pattern')">Debe tener almenos
+          <ul style="color:gray; font-size: 12px">
+            <li>una letra mayuscula</li>
+            <li>un Número </li>
+            <li>un Caracter Especial ($#%&amp34)</li>
+          </ul>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" floating>Confirmar Contraseña</ion-label>
+        <ion-input type="password" formControlName="PasswordConfirm"></ion-input>
+      </ion-item>
+      <p *ngIf="Password.value !=  formgroup.get('PasswordConfirm').value">Debe coincidir con la contraseña</p>      
+      <ion-item>
+        <ion-label color="primary" floating>
+          Tema
+        </ion-label>
+        <ion-select formControlName="Category" (ionChange)="getSubCategories($event)">
+          <ion-option *ngFor="let item of Categories|async" [value]="item.key">{{item.payload.val().Name}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item *ngIf="Category!=null">
+        <ion-label color="primary" floating>
+          Categoria
+        </ion-label>
+        <ion-select formControlName="Subcategory" (ionChange)="getSubCategories2( $event)">
+          <ion-option *ngFor="let item of SubCategories|async" [value]="item.key">{{item.payload.val().Name}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item *ngIf="hideSubcat2">
+        <ion-label color="primary" floating>
+          Sub Categoria
+        </ion-label>
+        <ion-select formControlName="Subcategory2">
+          <ion-option *ngFor="let item of SubCategories2|async" [value]="item.key">{{item.payload.val().Name}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <div padding>
+      <!-- <button ion-button block color="black" (click)="registerEvent();">Registrarse</button> -->
+      <button ion-button full color="primary" [disabled]="!formgroup.valid" style="margin-top: 20px;" type="submit">Registrarse</button>
+    </div>
+
+  </form>
+</ion-content>

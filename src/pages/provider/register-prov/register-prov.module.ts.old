@@ -1,0 +1,15 @@
+import { NgModule } from '@angular/core';
+import { IonicPageModule } from 'ionic-angular';
+import { RegisterProvPage } from './register-prov';
+import { FormBuilder, FormGroup, Validators, AbstractControl ,ReactiveFormsModule} from '@angular/forms';
+
+@NgModule({
+  declarations: [
+    RegisterProvPage,
+  ],
+  imports: [
+    IonicPageModule.forChild(RegisterProvPage),
+    ReactiveFormsModule
+  ],
+})
+export class RegisterProvPageModule {}

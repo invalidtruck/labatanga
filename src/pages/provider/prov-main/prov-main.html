@@ -1,0 +1,6 @@
+<ion-tabs>
+    <ion-tab [root]="provProfileRoot" [rootParams]="uid" tabTitle="Perfil" tabIcon="person"></ion-tab>
+    <ion-tab [root]="provRequestRoot" [rootParams]="uid" tabTitle="Solicitudes" tabIcon="information-circle" tabBadgeStyle="danger" [tabBadge]="getContracts((Contracts|async))"></ion-tab>
+    <ion-tab [root]="provHistoryRoot" [rootParams]="uid" tabTitle="Historial" tabIcon="md-paper"></ion-tab>
+    <ion-tab [root]="provSettingsRoot"[rootParams]="uid" tabTitle="Configuraciones" tabIcon="md-settings"></ion-tab>
+</ion-tabs>

@@ -1,0 +1,86 @@
+{
+  "project_info": {
+    "project_number": "227820216417",
+    "firebase_url": "https://labatanga-db15e.firebaseio.com",
+    "project_id": "labatanga-db15e",
+    "storage_bucket": "labatanga-db15e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:227820216417:android:0c23bdd642f4a7ce",
+        "android_client_info": {
+          "package_name": "com.invsys.labatanga"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "227820216417-0vim9m8c2ttp8c1b0mqefcps47r5g37p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAygP5_wRwILKPoZiddMKydqwP_DUI3qsU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:227820216417:android:2b7f902584b82b10",
+        "android_client_info": {
+          "package_name": "invsys.labatanga"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "227820216417-9sgrr4evgb1rpdt87qstpf98of7rsl60.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "invsys.labatanga",
+            "certificate_hash": "1fa23b1af1fd05ef31a2077f2e5a1cfa6f3d0627"
+          }
+        },
+        {
+          "client_id": "227820216417-0vim9m8c2ttp8c1b0mqefcps47r5g37p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAygP5_wRwILKPoZiddMKydqwP_DUI3qsU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "227820216417-0vim9m8c2ttp8c1b0mqefcps47r5g37p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

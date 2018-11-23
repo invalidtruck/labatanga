@@ -1,0 +1,59 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Perfil</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content>
+  <div id="profile-bg" [style.backgroundImage]="'url(' +  getImg(provider|async) + ')' "></div>
+  <div id="content">
+    <div id="profile-info">
+      <img id="profile-image" [src]="( (provider|async)?.icon ==undefined) ?  (provider|async)?.icon : 'assets/imgs/defaults/profiles/profile_provider.png'">
+      <h3 id="profile-name">{{(provider|async)?.Name}}</h3>
+      <span id="profile-description">{{(provider|async)?.Description}}</span>
+    </div>
+    <div>
+      <ion-grid>
+        <ion-row style="text-align: center;color:white">
+          <ion-col>
+            <label>
+              {{getDones( (Dones|async) )}}
+            </label>
+            <br>
+            <label>
+              Servicios Completados
+            </label>
+          </ion-col>
+          <ion-col>
+            <label>
+              {{getRequest( (Request|async) )}}
+            </label>
+            <br>
+            <label>
+              Pendientes
+            </label>
+          </ion-col>
+          <ion-col>
+            <label>
+              {{getLoses( (Loses|async) )}}
+            </label>
+            <br>
+            <label>
+              Perdidas
+            </label>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <ion-list>
+      <ion-item *ngFor="let contract of (provider|async)?.contracts">
+        <img class="post-profile-image" src="assets/imgs/misc/cat.jpg"> {{contract.text}}
+        <div class="post-time">{{contract.created_at}} something</div>
+        <div class="post-options">
+          <ion-icon name="undo"></ion-icon>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
