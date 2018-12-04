@@ -1,8 +1,9 @@
+import { ConfigPage } from './../config/config';
 import { SubCategoriesPage } from './../sub-categories/sub-categories';
 import { DetailsPage } from './../details/details';
 import { Observable } from 'rxjs/Observable';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular'; 
+import { IonicPage, NavController, NavParams, LoadingController, ModalController } from 'ionic-angular'; 
 import { ICategories, ISubCategories, IProveedor } from '../../services/Models';
 import { ListPage } from '../list/list';
 import { OrderModule } from 'ngx-order-pipe';
@@ -33,6 +34,7 @@ export class CategoriesPage {
 
   constructor(public navCtrl: NavController, 
     private geolocation: Geolocation,
+    private modalCtrl:ModalController,
     public navParams: NavParams,
     public afDB: AngularFirestore,
     public loadingCtrl: LoadingController) {
@@ -68,12 +70,18 @@ async init()
     }
   }
   getFromAlgolia($event) {
-    this.algoliaSearch = this.txtsearch.length > 0
+    this.algoliaSearch = this.txtsearch.trim().length > 0
     console.log({ search: $event.data })
-    if (this.txtsearch == null) return
-    this.index.search(this.txtsearch, {
+    if (this.txtsearch.trim() == null && this.txtsearch.trim() == "") return
+    // this.index.search(this.txtsearch, {
+    //   "hitsPerPage": 50
+    // })
+
+    this.index.search(this.txtsearch,{
+      filters: 'CP:64250',
       "hitsPerPage": 50
-    }).then(d => {
+    })
+    .then(d => {
       this.algResult = d.hits
       console.log(d.hits)
     })
@@ -98,6 +106,10 @@ async init()
     this.navCtrl.push(SubCategoriesPage, { CategoryID: cat.Value, CategoryName: cat.$key })
   }
 
-
+  more()
+  {
+    const modal = this.modalCtrl.create(ConfigPage);
+    modal.present();
+  }
 
 }

@@ -1,3 +1,4 @@
+import { ConfigPageModule } from './../pages/config/config.module';
 import { FCM } from '@ionic-native/fcm'; 
 // import { PayPal } from '@ionic-native/paypal';
 // import { ProvMainPageModule } from './../pages/provider/prov-main/prov-main.module'; 
@@ -30,6 +31,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth'; 
 
 //views
+
 import { ProfilePageModule } from './../pages/profile/profile.module'; 
 import { MainPageModule } from './../pages/main/main.module';
 import { MyApp } from './app.component';
@@ -94,6 +96,7 @@ import { HttpModule } from '@angular/http';
     ProfilePageModule,
    PipesModule,
     MainPageModule,
+    ConfigPageModule,
     // ProvMainPageModule
   ],
   bootstrap: [IonicApp],

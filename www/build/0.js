@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 550:
+/***/ 549:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,9 +8,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CategoriesPageModule", function() { return CategoriesPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__categories__ = __webpack_require__(583);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__categories__ = __webpack_require__(581);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pipes_pipes_module__ = __webpack_require__(323);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ngx_order_pipe__ = __webpack_require__(605);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ngx_order_pipe__ = __webpack_require__(603);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -44,7 +44,7 @@ var CategoriesPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 561:
+/***/ 560:
 /***/ (function(module, exports) {
 
 module.exports = Array.isArray || function (arr) {
@@ -54,7 +54,7 @@ module.exports = Array.isArray || function (arr) {
 
 /***/ }),
 
-/***/ 562:
+/***/ 561:
 /***/ (function(module, exports) {
 
 module.exports = function clone(obj) {
@@ -64,7 +64,7 @@ module.exports = function clone(obj) {
 
 /***/ }),
 
-/***/ 563:
+/***/ 562:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74,10 +74,10 @@ module.exports = function clone(obj) {
 // We use custom error "types" so that we can act on them when we need it
 // e.g.: if error instanceof errors.UnparsableJSON then..
 
-var inherits = __webpack_require__(566);
+var inherits = __webpack_require__(565);
 
 function AlgoliaSearchError(message, extraProperties) {
-  var forEach = __webpack_require__(564);
+  var forEach = __webpack_require__(563);
 
   var error = this;
 
@@ -150,7 +150,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 564:
+/***/ 563:
 /***/ (function(module, exports) {
 
 
@@ -179,10 +179,10 @@ module.exports = function forEach (obj, fn, ctx) {
 
 /***/ }),
 
-/***/ 565:
+/***/ 564:
 /***/ (function(module, exports, __webpack_require__) {
 
-var foreach = __webpack_require__(564);
+var foreach = __webpack_require__(563);
 
 module.exports = function map(arr, fn) {
   var newArr = [];
@@ -195,7 +195,7 @@ module.exports = function map(arr, fn) {
 
 /***/ }),
 
-/***/ 566:
+/***/ 565:
 /***/ (function(module, exports) {
 
 if (typeof Object.create === 'function') {
@@ -225,7 +225,7 @@ if (typeof Object.create === 'function') {
 
 /***/ }),
 
-/***/ 567:
+/***/ 566:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process) {/**
@@ -234,7 +234,7 @@ if (typeof Object.create === 'function') {
  * Expose `debug()` as the module.
  */
 
-exports = module.exports = __webpack_require__(594);
+exports = module.exports = __webpack_require__(592);
 exports.log = log;
 exports.formatArgs = formatArgs;
 exports.save = save;
@@ -428,7 +428,7 @@ function localstorage() {
 
 /***/ }),
 
-/***/ 568:
+/***/ 567:
 /***/ (function(module, exports) {
 
 module.exports = function deprecate(fn, message) {
@@ -450,7 +450,7 @@ module.exports = function deprecate(fn, message) {
 
 /***/ }),
 
-/***/ 569:
+/***/ 568:
 /***/ (function(module, exports) {
 
 module.exports = function deprecatedMessage(previousUsage, newUsage) {
@@ -464,7 +464,7 @@ module.exports = function deprecatedMessage(previousUsage, newUsage) {
 
 /***/ }),
 
-/***/ 571:
+/***/ 570:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -588,26 +588,26 @@ var TimesEntity = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 572:
+/***/ 571:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var AlgoliaSearch = __webpack_require__(586);
-var createAlgoliasearch = __webpack_require__(597);
+var AlgoliaSearch = __webpack_require__(584);
+var createAlgoliasearch = __webpack_require__(595);
 
 module.exports = createAlgoliasearch(AlgoliaSearch);
 
 
 /***/ }),
 
-/***/ 573:
+/***/ 572:
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildSearchMethod = __webpack_require__(574);
-var deprecate = __webpack_require__(568);
-var deprecatedMessage = __webpack_require__(569);
+var buildSearchMethod = __webpack_require__(573);
+var deprecate = __webpack_require__(567);
+var deprecatedMessage = __webpack_require__(568);
 
 module.exports = IndexCore;
 
@@ -759,7 +759,7 @@ IndexCore.prototype.similarSearch = buildSearchMethod('similarQuery');
 * @see {@link https://www.algolia.com/doc/rest_api#Browse|Algolia REST API Documentation}
 */
 IndexCore.prototype.browse = function(query, queryParameters, callback) {
-  var merge = __webpack_require__(575);
+  var merge = __webpack_require__(574);
 
   var indexObj = this;
 
@@ -854,8 +854,8 @@ IndexCore.prototype.browseFrom = function(cursor, callback) {
 * @param callback (optional)
 */
 IndexCore.prototype.searchForFacetValues = function(params, callback) {
-  var clone = __webpack_require__(562);
-  var omit = __webpack_require__(576);
+  var clone = __webpack_require__(561);
+  var omit = __webpack_require__(575);
   var usage = 'Usage: index.searchForFacetValues({facetName, facetQuery, ...params}[, callback])';
 
   if (params.facetName === undefined || params.facetQuery === undefined) {
@@ -944,8 +944,8 @@ IndexCore.prototype.getObject = function(objectID, attrs, callback) {
 * @param objectIDs the array of unique identifier of objects to retrieve
 */
 IndexCore.prototype.getObjects = function(objectIDs, attributesToRetrieve, callback) {
-  var isArray = __webpack_require__(561);
-  var map = __webpack_require__(565);
+  var isArray = __webpack_require__(560);
+  var map = __webpack_require__(564);
 
   var usage = 'Usage: index.getObjects(arrayOfObjectIDs[, callback])';
 
@@ -992,12 +992,12 @@ IndexCore.prototype.typeAheadValueOption = null;
 
 /***/ }),
 
-/***/ 574:
+/***/ 573:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = buildSearchMethod;
 
-var errors = __webpack_require__(563);
+var errors = __webpack_require__(562);
 
 /**
  * Creates a search method to be used in clients
@@ -1066,10 +1066,10 @@ function buildSearchMethod(queryParam, url) {
 
 /***/ }),
 
-/***/ 575:
+/***/ 574:
 /***/ (function(module, exports, __webpack_require__) {
 
-var foreach = __webpack_require__(564);
+var foreach = __webpack_require__(563);
 
 module.exports = function merge(destination/* , sources */) {
   var sources = Array.prototype.slice.call(arguments);
@@ -1092,12 +1092,12 @@ module.exports = function merge(destination/* , sources */) {
 
 /***/ }),
 
-/***/ 576:
+/***/ 575:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = function omit(obj, test) {
-  var keys = __webpack_require__(588);
-  var foreach = __webpack_require__(564);
+  var keys = __webpack_require__(586);
+  var foreach = __webpack_require__(563);
 
   var filtered = {};
 
@@ -1113,7 +1113,7 @@ module.exports = function omit(obj, test) {
 
 /***/ }),
 
-/***/ 577:
+/***/ 576:
 /***/ (function(module, exports) {
 
 // Parse cloud does not supports setTimeout
@@ -1127,21 +1127,22 @@ module.exports = function exitPromise(fn, _setTimeout) {
 
 /***/ }),
 
-/***/ 583:
+/***/ 581:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoriesPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sub_categories_sub_categories__ = __webpack_require__(584);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__details_details__ = __webpack_require__(320);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_geolocation__ = __webpack_require__(172);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_algoliasearch__ = __webpack_require__(572);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_algoliasearch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_algoliasearch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angularfire2_firestore__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angularfire2_firestore___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_angularfire2_firestore__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operators__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_config__ = __webpack_require__(605);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__sub_categories_sub_categories__ = __webpack_require__(582);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__details_details__ = __webpack_require__(320);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_geolocation__ = __webpack_require__(172);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_algoliasearch__ = __webpack_require__(571);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_algoliasearch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_algoliasearch__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angularfire2_firestore__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angularfire2_firestore___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_angularfire2_firestore__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_operators__ = __webpack_require__(17);
 var __assign = (this && this.__assign) || Object.assign || function(t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
         s = arguments[i];
@@ -1202,16 +1203,18 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 
 
 
+
 var CategoriesPage = /** @class */ (function () {
-    function CategoriesPage(navCtrl, geolocation, navParams, afDB, loadingCtrl) {
+    function CategoriesPage(navCtrl, geolocation, modalCtrl, navParams, afDB, loadingCtrl) {
         this.navCtrl = navCtrl;
         this.geolocation = geolocation;
+        this.modalCtrl = modalCtrl;
         this.navParams = navParams;
         this.afDB = afDB;
         this.loadingCtrl = loadingCtrl;
         this.ALGOLIA_APP_ID = "HD00BWMGMW";
         this.ALGOLIA_API_KEY = "42293ab5c8f0c8019b68f3c24d7d4643";
-        this.client = __WEBPACK_IMPORTED_MODULE_5_algoliasearch__(this.ALGOLIA_APP_ID, this.ALGOLIA_API_KEY, { protocol: 'https' });
+        this.client = __WEBPACK_IMPORTED_MODULE_6_algoliasearch__(this.ALGOLIA_APP_ID, this.ALGOLIA_API_KEY, { protocol: 'https' });
         this.index = this.client.initIndex("Providers");
     }
     CategoriesPage.prototype.init = function () {
@@ -1223,7 +1226,7 @@ var CategoriesPage = /** @class */ (function () {
                     spinner: "dots"
                 });
                 loader.present();
-                this.categories = this.afDB.collection("Categorias").snapshotChanges().pipe(Object(__WEBPACK_IMPORTED_MODULE_7_rxjs_operators__["map"])(function (actions) { return actions.map(function (a) {
+                this.categories = this.afDB.collection("Categorias").snapshotChanges().pipe(Object(__WEBPACK_IMPORTED_MODULE_8_rxjs_operators__["map"])(function (actions) { return actions.map(function (a) {
                     var data = a.payload.doc.data();
                     var $key = a.payload.doc.id;
                     return __assign({ $key: $key }, data);
@@ -1243,13 +1246,18 @@ var CategoriesPage = /** @class */ (function () {
     };
     CategoriesPage.prototype.getFromAlgolia = function ($event) {
         var _this = this;
-        this.algoliaSearch = this.txtsearch.length > 0;
+        this.algoliaSearch = this.txtsearch.trim().length > 0;
         console.log({ search: $event.data });
-        if (this.txtsearch == null)
+        if (this.txtsearch.trim() == null && this.txtsearch.trim() == "")
             return;
+        // this.index.search(this.txtsearch, {
+        //   "hitsPerPage": 50
+        // })
         this.index.search(this.txtsearch, {
+            filters: 'CP:64250',
             "hitsPerPage": 50
-        }).then(function (d) {
+        })
+            .then(function (d) {
             _this.algResult = d.hits;
             console.log(d.hits);
         });
@@ -1257,7 +1265,7 @@ var CategoriesPage = /** @class */ (function () {
     CategoriesPage.prototype.contract = function (prov) {
     };
     CategoriesPage.prototype.itemTapped = function (event, item, payload, key) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_1__details_details__["a" /* DetailsPage */], {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__details_details__["a" /* DetailsPage */], {
             uid: item.uid,
         });
     };
@@ -1265,17 +1273,18 @@ var CategoriesPage = /** @class */ (function () {
         console.log('ionViewDidLoad CategoriesPage');
     };
     CategoriesPage.prototype.getProviders = function (cat) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_0__sub_categories_sub_categories__["a" /* SubCategoriesPage */], { CategoryID: cat.Value, CategoryName: cat.$key });
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_1__sub_categories_sub_categories__["a" /* SubCategoriesPage */], { CategoryID: cat.Value, CategoryName: cat.$key });
     };
+    CategoriesPage.prototype.more = function () {
+        var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_0__config_config__["a" /* ConfigPage */]);
+        modal.present();
+    };
+    var _a, _b, _c, _d, _e, _f;
     CategoriesPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["m" /* Component */])({
-            selector: 'page-categories',template:/*ion-inline-start:"C:\proys\ionic\labatanga\src\pages\categories\categories.html"*/'<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>Categorias</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class="card-background-page">\n\n  <div>\n\n    <ion-searchbar placeholder="¿Qué estas buscando?" [(ngModel)]="txtsearch" [debounce]="750" [animated]=true\n\n      (ionInput)="getFromAlgolia($event)">\n\n    </ion-searchbar> \n\n  </div>\n\n  <div *ngIf="algoliaSearch"> \n\n    <ion-list>\n\n        <ion-item-sliding #slidingItem *ngFor="let prov of algResult" (click)="itemTapped($event,prov, prov.$value, prov.$key)">\n\n            <ion-item>\n\n                <div item-left class="logo">\n\n                  <img src="">\n\n                </div>\n\n                <ion-card style="border-left: 3px solid #ffae00" >\n\n                  <ion-row>\n\n                    <ion-col width-80>\n\n                      <strong> {{prov.CompanyName}}</strong>\n\n                    </ion-col>\n\n                    <ion-col width-20 text-right>\n\n                      <!-- <ion-badge *ngIf="getRating(prov.rating)==0" color="secondary">Nuevo</ion-badge>\n\n                      <span *ngIf="getRating(prov.rating)>0">\n\n                        <ion-icon color="yellow" style=" text-shadow: 1px 1px 1px rgb(54, 63, 0);" name="md-star"></ion-icon>\n\n                        <span style="color:black;">{{getRating(prov.rating)}} </span>\n\n                        <span style="color:gray">({{TotalRating(prov.rating)}}) </span>\n\n                      </span> -->\n\n                    </ion-col>\n\n                  </ion-row>\n\n                  <ion-card-content>\n\n                    <div class="text-description">\n\n                      {{ ( prov.Description.length>100)? ( prov.Description | slice:0:100)+\'..\':( prov.Description) }}\n\n                    </div>\n\n                    <div class="item-note" item-end>\n\n        \n\n                    </div>\n\n                  </ion-card-content>\n\n                </ion-card>\n\n              </ion-item>\n\n            <ion-item-options>\n\n              <button ion-button (click)="Cotizar(prov.$key)">Cotizar</button>\n\n            </ion-item-options>\n\n          </ion-item-sliding>\n\n  \n\n    </ion-list>\n\n  </div>\n\n  <div *ngIf="!algoliaSearch && (categories|async)">\n\n    <ion-card *ngFor="let cat of categories|async" (click)="getProviders(cat)">\n\n      <img [src]="\'assets/imgs/categories/\' + cat.img">\n\n      <div class="card-title">{{cat.Name}}</div>\n\n      <!-- <div class="card-subtitle">{{getSubCats(cat)}}</div> -->\n\n    </ion-card>\n\n  </div>\n\n</ion-content>'/*ion-inline-end:"C:\proys\ionic\labatanga\src\pages\categories\categories.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["m" /* Component */])({
+            selector: 'page-categories',template:/*ion-inline-start:"C:\proys\ionic\labatanga\src\pages\categories\categories.html"*/'<ion-header>\n\n\n\n  <!-- <ion-navbar color="primary">\n\n    <ion-title>Categorias</ion-title>\n\n    \n\n  </ion-navbar> -->\n\n  <ion-toolbar color="primary">\n\n \n\n    <ion-title>Categorias</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only color="royal"  (click)="more()">\n\n        <ion-icon name="more"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content class="card-background-page">\n\n  <div>\n\n    <ion-searchbar placeholder="¿Qué estas buscando?" [(ngModel)]="txtsearch" [debounce]="750" [animated]=true\n\n      (ionInput)="getFromAlgolia($event)">\n\n    </ion-searchbar> \n\n  </div>\n\n  <div *ngIf="algoliaSearch"> \n\n    <ion-list>\n\n        <ion-item-sliding #slidingItem *ngFor="let prov of algResult" (click)="itemTapped($event,prov, prov.$value, prov.$key)">\n\n            <ion-item>\n\n                <div item-left class="logo">\n\n                  <img src="">\n\n                </div>\n\n                <ion-card style="border-left: 3px solid #ffae00" >\n\n                  <ion-row>\n\n                    <ion-col width-80>\n\n                      <strong> {{prov.CompanyName}}</strong>\n\n                    </ion-col>\n\n                    <ion-col width-20 text-right>\n\n                      <!-- <ion-badge *ngIf="getRating(prov.rating)==0" color="secondary">Nuevo</ion-badge>\n\n                      <span *ngIf="getRating(prov.rating)>0">\n\n                        <ion-icon color="yellow" style=" text-shadow: 1px 1px 1px rgb(54, 63, 0);" name="md-star"></ion-icon>\n\n                        <span style="color:black;">{{getRating(prov.rating)}} </span>\n\n                        <span style="color:gray">({{TotalRating(prov.rating)}}) </span>\n\n                      </span> -->\n\n                    </ion-col>\n\n                  </ion-row>\n\n                  <ion-card-content>\n\n                    <div class="text-description">\n\n                      {{ ( prov.Description.length>100)? ( prov.Description | slice:0:100)+\'..\':( prov.Description) }}\n\n                    </div>\n\n                    <div class="item-note" item-end>\n\n        \n\n                    </div>\n\n                  </ion-card-content>\n\n                </ion-card>\n\n              </ion-item>\n\n            <ion-item-options>\n\n              <button ion-button (click)="Cotizar(prov.$key)">Cotizar</button>\n\n            </ion-item-options>\n\n          </ion-item-sliding>\n\n  \n\n    </ion-list>\n\n  </div>\n\n  <div *ngIf="!algoliaSearch && (categories|async)">\n\n    <ion-card *ngFor="let cat of categories|async" (click)="getProviders(cat)">\n\n      <img [src]="\'assets/imgs/categories/\' + cat.img">\n\n      <div class="card-title">{{cat.Name}}</div>\n\n      <!-- <div class="card-subtitle">{{getSubCats(cat)}}</div> -->\n\n    </ion-card>\n\n  </div>\n\n</ion-content>'/*ion-inline-end:"C:\proys\ionic\labatanga\src\pages\categories\categories.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["i" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_4__ionic_native_geolocation__["a" /* Geolocation */],
-            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_6_angularfire2_firestore__["AngularFirestore"],
-            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["f" /* LoadingController */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__ionic_native_geolocation__["a" /* Geolocation */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__ionic_native_geolocation__["a" /* Geolocation */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["g" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["g" /* ModalController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["j" /* NavParams */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_7_angularfire2_firestore__["AngularFirestore"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7_angularfire2_firestore__["AngularFirestore"]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["f" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["f" /* LoadingController */]) === "function" && _f || Object])
     ], CategoriesPage);
     return CategoriesPage;
 }());
@@ -1284,17 +1293,17 @@ var CategoriesPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 584:
+/***/ 582:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SubCategoriesPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sub_categories_second_sub_categories_second__ = __webpack_require__(585);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sub_categories_second_sub_categories_second__ = __webpack_require__(583);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__ = __webpack_require__(319);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_database___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angularfire2_database__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__time_service_time_service__ = __webpack_require__(571);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__time_service_time_service__ = __webpack_require__(570);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1358,7 +1367,7 @@ var SubCategoriesPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 585:
+/***/ 583:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1367,7 +1376,7 @@ var SubCategoriesPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__(319);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angularfire2_database__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__time_service_time_service__ = __webpack_require__(571);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__time_service_time_service__ = __webpack_require__(570);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1419,17 +1428,17 @@ var SubCategoriesSecondPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 586:
+/***/ 584:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = AlgoliaSearch;
 
-var Index = __webpack_require__(587);
-var deprecate = __webpack_require__(568);
-var deprecatedMessage = __webpack_require__(569);
-var AlgoliaSearchCore = __webpack_require__(592);
-var inherits = __webpack_require__(566);
-var errors = __webpack_require__(563);
+var Index = __webpack_require__(585);
+var deprecate = __webpack_require__(567);
+var deprecatedMessage = __webpack_require__(568);
+var AlgoliaSearchCore = __webpack_require__(590);
+var inherits = __webpack_require__(565);
+var errors = __webpack_require__(562);
 
 function AlgoliaSearch() {
   AlgoliaSearchCore.apply(this, arguments);
@@ -1521,7 +1530,7 @@ AlgoliaSearch.prototype.copyIndex = function(srcIndexName, dstIndexName, scopeOr
  *  content: the server answer that contains the task ID
  */
 AlgoliaSearch.prototype.getLogs = function(offset, length, callback) {
-  var clone = __webpack_require__(562);
+  var clone = __webpack_require__(561);
   var params = {};
   if (typeof offset === 'object') {
     // getLogs(params)
@@ -1595,7 +1604,7 @@ AlgoliaSearch.prototype.initAnalytics = function(opts) {
   // - move initAnalytics to a property on the main module (algoliasearch.initAnalytics),
   // same as places.
   // The current API was made mostly to mimic the one made in PHP
-  var createAnalyticsClient = __webpack_require__(596);
+  var createAnalyticsClient = __webpack_require__(594);
   return createAnalyticsClient(this.applicationID, this.apiKey, opts);
 };
 
@@ -1714,7 +1723,7 @@ AlgoliaSearch.prototype.addUserKey = deprecate(function(acls, params, callback) 
  * @see {@link https://www.algolia.com/doc/rest_api#AddKey|Algolia REST API Documentation}
  */
 AlgoliaSearch.prototype.addApiKey = function(acls, params, callback) {
-  var isArray = __webpack_require__(561);
+  var isArray = __webpack_require__(560);
   var usage = 'Usage: client.addApiKey(arrayOfAcls[, params, callback])';
 
   if (!isArray(acls)) {
@@ -1805,7 +1814,7 @@ AlgoliaSearch.prototype.updateUserKey = deprecate(function(key, acls, params, ca
  * @see {@link https://www.algolia.com/doc/rest_api#UpdateIndexKey|Algolia REST API Documentation}
  */
 AlgoliaSearch.prototype.updateApiKey = function(key, acls, params, callback) {
-  var isArray = __webpack_require__(561);
+  var isArray = __webpack_require__(560);
   var usage = 'Usage: client.updateApiKey(key, arrayOfAcls[, params, callback])';
 
   if (!isArray(acls)) {
@@ -1906,7 +1915,7 @@ AlgoliaSearch.prototype.sendQueriesBatch = deprecate(function sendQueriesBatchDe
  * }], cb)
  */
 AlgoliaSearch.prototype.batch = function(operations, callback) {
-  var isArray = __webpack_require__(561);
+  var isArray = __webpack_require__(560);
   var usage = 'Usage: client.batch(operations[, callback])';
 
   if (!isArray(operations)) {
@@ -2095,15 +2104,15 @@ function notImplemented() {
 
 /***/ }),
 
-/***/ 587:
+/***/ 585:
 /***/ (function(module, exports, __webpack_require__) {
 
-var inherits = __webpack_require__(566);
-var IndexCore = __webpack_require__(573);
-var deprecate = __webpack_require__(568);
-var deprecatedMessage = __webpack_require__(569);
-var exitPromise = __webpack_require__(577);
-var errors = __webpack_require__(563);
+var inherits = __webpack_require__(565);
+var IndexCore = __webpack_require__(572);
+var deprecate = __webpack_require__(567);
+var deprecatedMessage = __webpack_require__(568);
+var exitPromise = __webpack_require__(576);
+var errors = __webpack_require__(562);
 
 var deprecateForwardToSlaves = deprecate(
   function() {},
@@ -2157,7 +2166,7 @@ Index.prototype.addObject = function(content, objectID, callback) {
 *  content: the server answer that updateAt and taskID
 */
 Index.prototype.addObjects = function(objects, callback) {
-  var isArray = __webpack_require__(561);
+  var isArray = __webpack_require__(560);
   var usage = 'Usage: index.addObjects(arrayOfObjects[, callback])';
 
   if (!isArray(objects)) {
@@ -2229,7 +2238,7 @@ Index.prototype.partialUpdateObjects = function(objects, createIfNotExists, call
     createIfNotExists = true;
   }
 
-  var isArray = __webpack_require__(561);
+  var isArray = __webpack_require__(560);
   var usage = 'Usage: index.partialUpdateObjects(arrayOfObjects[, callback])';
 
   if (!isArray(objects)) {
@@ -2285,7 +2294,7 @@ Index.prototype.saveObject = function(object, callback) {
 *  content: the server answer that updateAt and taskID
 */
 Index.prototype.saveObjects = function(objects, callback) {
-  var isArray = __webpack_require__(561);
+  var isArray = __webpack_require__(560);
   var usage = 'Usage: index.saveObjects(arrayOfObjects[, callback])';
 
   if (!isArray(objects)) {
@@ -2354,8 +2363,8 @@ Index.prototype.deleteObject = function(objectID, callback) {
 *  content: the server answer that contains 3 elements: createAt, taskId and objectID
 */
 Index.prototype.deleteObjects = function(objectIDs, callback) {
-  var isArray = __webpack_require__(561);
-  var map = __webpack_require__(565);
+  var isArray = __webpack_require__(560);
+  var map = __webpack_require__(564);
 
   var usage = 'Usage: index.deleteObjects(arrayOfObjectIDs[, callback])';
 
@@ -2395,8 +2404,8 @@ Index.prototype.deleteObjects = function(objectIDs, callback) {
 * @deprecated see index.deleteBy
 */
 Index.prototype.deleteByQuery = deprecate(function(query, params, callback) {
-  var clone = __webpack_require__(562);
-  var map = __webpack_require__(565);
+  var clone = __webpack_require__(561);
+  var map = __webpack_require__(564);
 
   var indexObj = this;
   var client = indexObj.as;
@@ -2530,9 +2539,9 @@ Index.prototype.browseAll = function(query, queryParameters) {
     query = undefined;
   }
 
-  var merge = __webpack_require__(575);
+  var merge = __webpack_require__(574);
 
-  var IndexBrowser = __webpack_require__(590);
+  var IndexBrowser = __webpack_require__(588);
 
   var browser = new IndexBrowser();
   var client = this.as;
@@ -3219,7 +3228,7 @@ Index.prototype.addUserKey = deprecate(function(acls, params, callback) {
 * @deprecated see client.addApiKey()
 */
 Index.prototype.addApiKey = deprecate(function(acls, params, callback) {
-  var isArray = __webpack_require__(561);
+  var isArray = __webpack_require__(560);
   var usage = 'Usage: index.addApiKey(arrayOfAcls[, params, callback])';
 
   if (!isArray(acls)) {
@@ -3310,7 +3319,7 @@ Index.prototype.updateUserKey = deprecate(function(key, acls, params, callback) 
 * @deprecated see client.updateApiKey()
 */
 Index.prototype.updateApiKey = deprecate(function(key, acls, params, callback) {
-  var isArray = __webpack_require__(561);
+  var isArray = __webpack_require__(560);
   var usage = 'Usage: index.updateApiKey(key, arrayOfAcls[, params, callback])';
 
   if (!isArray(acls)) {
@@ -3351,7 +3360,7 @@ Index.prototype.updateApiKey = deprecate(function(key, acls, params, callback) {
 
 /***/ }),
 
-/***/ 588:
+/***/ 586:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3361,7 +3370,7 @@ Index.prototype.updateApiKey = deprecate(function(key, acls, params, callback) {
 var has = Object.prototype.hasOwnProperty;
 var toStr = Object.prototype.toString;
 var slice = Array.prototype.slice;
-var isArgs = __webpack_require__(589);
+var isArgs = __webpack_require__(587);
 var isEnumerable = Object.prototype.propertyIsEnumerable;
 var hasDontEnumBug = !isEnumerable.call({ toString: null }, 'toString');
 var hasProtoEnumBug = isEnumerable.call(function () {}, 'prototype');
@@ -3499,7 +3508,7 @@ module.exports = keysShim;
 
 /***/ }),
 
-/***/ 589:
+/***/ 587:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3524,7 +3533,7 @@ module.exports = function isArguments(value) {
 
 /***/ }),
 
-/***/ 590:
+/***/ 588:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3534,8 +3543,8 @@ module.exports = function isArguments(value) {
 
 module.exports = IndexBrowser;
 
-var inherits = __webpack_require__(566);
-var EventEmitter = __webpack_require__(591).EventEmitter;
+var inherits = __webpack_require__(565);
+var EventEmitter = __webpack_require__(589).EventEmitter;
 
 function IndexBrowser() {
 }
@@ -3571,7 +3580,7 @@ IndexBrowser.prototype._clean = function() {
 
 /***/ }),
 
-/***/ 591:
+/***/ 589:
 /***/ (function(module, exports) {
 
 // Copyright Joyent, Inc. and other Node contributors.
@@ -3880,15 +3889,15 @@ function isUndefined(arg) {
 
 /***/ }),
 
-/***/ 592:
+/***/ 590:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process) {module.exports = AlgoliaSearchCore;
 
-var errors = __webpack_require__(563);
-var exitPromise = __webpack_require__(577);
-var IndexCore = __webpack_require__(573);
-var store = __webpack_require__(593);
+var errors = __webpack_require__(562);
+var exitPromise = __webpack_require__(576);
+var IndexCore = __webpack_require__(572);
+var store = __webpack_require__(591);
 
 // We will always put the API KEY in the JSON body in case of too long API KEY,
 // to avoid query string being too long and failing in various conditions (our server limit, browser limit,
@@ -3923,11 +3932,11 @@ var RESET_APP_DATA_TIMER =
  *           If you provide them, you will less benefit from our HA implementation
  */
 function AlgoliaSearchCore(applicationID, apiKey, opts) {
-  var debug = __webpack_require__(567)('algoliasearch');
+  var debug = __webpack_require__(566)('algoliasearch');
 
-  var clone = __webpack_require__(562);
-  var isArray = __webpack_require__(561);
-  var map = __webpack_require__(565);
+  var clone = __webpack_require__(561);
+  var isArray = __webpack_require__(560);
+  var map = __webpack_require__(564);
 
   var usage = 'Usage: algoliasearch(applicationID, apiKey, opts)';
 
@@ -4067,7 +4076,7 @@ AlgoliaSearchCore.prototype.addAlgoliaAgent = function(algoliaAgent) {
 AlgoliaSearchCore.prototype._jsonRequest = function(initialOpts) {
   this._checkAppIdData();
 
-  var requestDebug = __webpack_require__(567)('algoliasearch:' + initialOpts.url);
+  var requestDebug = __webpack_require__(566)('algoliasearch:' + initialOpts.url);
 
 
   var body;
@@ -4450,7 +4459,7 @@ AlgoliaSearchCore.prototype._getSearchParams = function(args, params) {
  * @param [Object] options.headers Extra headers to send
  */
 AlgoliaSearchCore.prototype._computeRequestHeaders = function(options) {
-  var forEach = __webpack_require__(564);
+  var forEach = __webpack_require__(563);
 
   var ua = options.additionalUA ?
     this._ua + ';' + options.additionalUA :
@@ -4500,8 +4509,8 @@ AlgoliaSearchCore.prototype._computeRequestHeaders = function(options) {
  * @return {Promise|undefined} Returns a promise if no callback given
  */
 AlgoliaSearchCore.prototype.search = function(queries, opts, callback) {
-  var isArray = __webpack_require__(561);
-  var map = __webpack_require__(565);
+  var isArray = __webpack_require__(560);
+  var map = __webpack_require__(564);
 
   var usage = 'Usage: client.search(arrayOfQueries[, callback])';
 
@@ -4583,8 +4592,8 @@ AlgoliaSearchCore.prototype.search = function(queries, opts, callback) {
 * Pagination is not supported. The page and hitsPerPage parameters will be ignored.
 */
 AlgoliaSearchCore.prototype.searchForFacetValues = function(queries) {
-  var isArray = __webpack_require__(561);
-  var map = __webpack_require__(565);
+  var isArray = __webpack_require__(560);
+  var map = __webpack_require__(564);
 
   var usage = 'Usage: client.searchForFacetValues([{indexName, params: {facetName, facetQuery, ...params}}, ...queries])'; // eslint-disable-line max-len
 
@@ -4604,8 +4613,8 @@ AlgoliaSearchCore.prototype.searchForFacetValues = function(queries) {
       throw new Error(usage);
     }
 
-    var clone = __webpack_require__(562);
-    var omit = __webpack_require__(576);
+    var clone = __webpack_require__(561);
+    var omit = __webpack_require__(575);
 
     var indexName = query.indexName;
     var params = query.params;
@@ -4735,7 +4744,7 @@ AlgoliaSearchCore.prototype._cacheAppIdData = function(data) {
 };
 
 AlgoliaSearchCore.prototype._partialAppIdDataUpdate = function(newData) {
-  var foreach = __webpack_require__(564);
+  var foreach = __webpack_require__(563);
   var currentData = this._getAppIdData();
   foreach(newData, function(value, key) {
     currentData[key] = value;
@@ -4757,7 +4766,7 @@ AlgoliaSearchCore.prototype._getHostIndexByType = function(hostType) {
 };
 
 AlgoliaSearchCore.prototype._setHostIndexByType = function(hostIndex, hostType) {
-  var clone = __webpack_require__(562);
+  var clone = __webpack_require__(561);
   var newHostIndexes = clone(this._hostIndexes);
   newHostIndexes[hostType] = hostIndex;
   this._partialAppIdDataUpdate({hostIndexes: newHostIndexes});
@@ -4854,10 +4863,10 @@ function removeCredentials(headers) {
 
 /***/ }),
 
-/***/ 593:
+/***/ 591:
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {var debug = __webpack_require__(567)('algoliasearch:src/hostIndexState.js');
+/* WEBPACK VAR INJECTION */(function(global) {var debug = __webpack_require__(566)('algoliasearch:src/hostIndexState.js');
 var localStorageNamespace = 'algoliasearch-client-js';
 
 var store;
@@ -4948,7 +4957,7 @@ function cleanup() {
 
 /***/ }),
 
-/***/ 594:
+/***/ 592:
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -4964,7 +4973,7 @@ exports.coerce = coerce;
 exports.disable = disable;
 exports.enable = enable;
 exports.enabled = enabled;
-exports.humanize = __webpack_require__(595);
+exports.humanize = __webpack_require__(593);
 
 /**
  * Active `debug` instances.
@@ -5180,7 +5189,7 @@ function coerce(val) {
 
 /***/ }),
 
-/***/ 595:
+/***/ 593:
 /***/ (function(module, exports) {
 
 /**
@@ -5339,12 +5348,12 @@ function plural(ms, n, name) {
 
 /***/ }),
 
-/***/ 596:
+/***/ 594:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = createAnalyticsClient;
 
-var algoliasearch = __webpack_require__(572);
+var algoliasearch = __webpack_require__(571);
 
 function createAnalyticsClient(appId, apiKey, opts) {
   var analytics = {};
@@ -5431,32 +5440,32 @@ function createAnalyticsClient(appId, apiKey, opts) {
 
 /***/ }),
 
-/***/ 597:
+/***/ 595:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
-var global = __webpack_require__(598);
-var Promise = global.Promise || __webpack_require__(599).Promise;
+var global = __webpack_require__(596);
+var Promise = global.Promise || __webpack_require__(597).Promise;
 
 // This is the standalone browser build entry point
 // Browser implementation of the Algolia Search JavaScript client,
 // using XMLHttpRequest, XDomainRequest and JSONP as fallback
 module.exports = function createAlgoliasearch(AlgoliaSearch, uaSuffix) {
-  var inherits = __webpack_require__(566);
-  var errors = __webpack_require__(563);
-  var inlineHeaders = __webpack_require__(600);
-  var jsonpRequest = __webpack_require__(602);
-  var places = __webpack_require__(603);
+  var inherits = __webpack_require__(565);
+  var errors = __webpack_require__(562);
+  var inlineHeaders = __webpack_require__(598);
+  var jsonpRequest = __webpack_require__(600);
+  var places = __webpack_require__(601);
   uaSuffix = uaSuffix || '';
 
   if (process.env.NODE_ENV === 'debug') {
-    __webpack_require__(567).enable('algoliasearch*');
+    __webpack_require__(566).enable('algoliasearch*');
   }
 
   function algoliasearch(applicationID, apiKey, opts) {
-    var cloneDeep = __webpack_require__(562);
+    var cloneDeep = __webpack_require__(561);
 
     opts = cloneDeep(opts || {});
 
@@ -5465,14 +5474,14 @@ module.exports = function createAlgoliasearch(AlgoliaSearch, uaSuffix) {
     return new AlgoliaSearchBrowser(applicationID, apiKey, opts);
   }
 
-  algoliasearch.version = __webpack_require__(604);
+  algoliasearch.version = __webpack_require__(602);
   algoliasearch.ua = 'Algolia for vanilla JavaScript ' + uaSuffix + algoliasearch.version;
   algoliasearch.initPlaces = places(algoliasearch);
 
   // we expose into window no matter how we are used, this will allow
   // us to easily debug any website running algolia
   global.__algolia = {
-    debug: __webpack_require__(567),
+    debug: __webpack_require__(566),
     algoliasearch: algoliasearch
   };
 
@@ -5673,7 +5682,7 @@ module.exports = function createAlgoliasearch(AlgoliaSearch, uaSuffix) {
 
 /***/ }),
 
-/***/ 598:
+/***/ 596:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var win;
@@ -5694,7 +5703,7 @@ module.exports = win;
 
 /***/ }),
 
-/***/ 599:
+/***/ 597:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process, global) {/*!
@@ -6885,7 +6894,7 @@ return Promise$1;
 
 /***/ }),
 
-/***/ 600:
+/***/ 598:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6893,7 +6902,7 @@ return Promise$1;
 
 module.exports = inlineHeaders;
 
-var encode = __webpack_require__(601);
+var encode = __webpack_require__(599);
 
 function inlineHeaders(url, headers) {
   if (/\?/.test(url)) {
@@ -6908,7 +6917,7 @@ function inlineHeaders(url, headers) {
 
 /***/ }),
 
-/***/ 601:
+/***/ 599:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7001,7 +7010,7 @@ var objectKeys = Object.keys || function (obj) {
 
 /***/ }),
 
-/***/ 602:
+/***/ 600:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7009,7 +7018,7 @@ var objectKeys = Object.keys || function (obj) {
 
 module.exports = jsonpRequest;
 
-var errors = __webpack_require__(563);
+var errors = __webpack_require__(562);
 
 var JSONPCounter = 0;
 
@@ -7135,16 +7144,16 @@ function jsonpRequest(url, opts, cb) {
 
 /***/ }),
 
-/***/ 603:
+/***/ 601:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = createPlacesClient;
 
-var buildSearchMethod = __webpack_require__(574);
+var buildSearchMethod = __webpack_require__(573);
 
 function createPlacesClient(algoliasearch) {
   return function places(appID, apiKey, opts) {
-    var cloneDeep = __webpack_require__(562);
+    var cloneDeep = __webpack_require__(561);
 
     opts = opts && cloneDeep(opts) || {};
     opts.hosts = opts.hosts || [
@@ -7179,7 +7188,7 @@ function createPlacesClient(algoliasearch) {
 
 /***/ }),
 
-/***/ 604:
+/***/ 602:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7190,7 +7199,7 @@ module.exports = '3.30.0';
 
 /***/ }),
 
-/***/ 605:
+/***/ 603:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
