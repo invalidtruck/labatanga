@@ -7,7 +7,7 @@ export interface IUser {
     FirstName: string
     LastName2: string
     Gender: string
-    img: string
+    imgUrl: string
     rating: IRating
     Comments: IComments
     Email: string
@@ -31,6 +31,7 @@ export interface IQuery {
 
 
 export interface IContracted {
+    UserID: string;
     $key: string
     contracted_date: DateTime
 }
@@ -77,6 +78,7 @@ export interface ISubCategories {
     $key: string
     Name: string
     Value: number
+    SubCategories:ISubCategories
 }
 export interface IDataRequest {
     $key: string
@@ -85,4 +87,18 @@ export interface IDataRequest {
     time: string
     img: string
     timestamp: string
+}
+
+export interface IEstados{
+    $key:string
+    name:string
+    id:number
+}
+
+export interface ICiudades{
+    $key:string
+    id:number
+    name:string
+    inegiid: number
+    stateid:number 
 }

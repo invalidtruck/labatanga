@@ -1,9 +1,6 @@
-import { FCM } from '@ionic-native/fcm';
-
+import { FCM } from '@ionic-native/fcm'; 
 // import { PayPal } from '@ionic-native/paypal';
-// import { ProvMainPageModule } from './../pages/provider/prov-main/prov-main.module';
-
-
+// import { ProvMainPageModule } from './../pages/provider/prov-main/prov-main.module'; 
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -27,11 +24,10 @@ import { Geolocation } from '@ionic-native/geolocation';
 // import { Badge } from '@ionic-native/badge'
 
 //firebase
-import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
-import { AngularFireStorage } from "angularfire2/storage";
-import { AngularFireAuthModule } from 'angularfire2/auth';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+// import { AngularFireStorage } from "angularfire2/storage";
+import { AngularFireAuthModule } from 'angularfire2/auth'; 
 
 //views
 import { ProfilePageModule } from './../pages/profile/profile.module'; 
@@ -40,7 +36,7 @@ import { MyApp } from './app.component';
 // import { CommentsPage } from '../pages/comments/comments';
 import { ListPage } from '../pages/list/list';
 // import { DetailsPage } from '../pages/details/details';
-// import { RegisterProvPage } from '../pages/provider/register-prov/register-prov';
+import { RegisterProvPage } from '../pages/provider/register-prov/register-prov';
 import { WelcomePage } from '../pages/welcome/welcome';
 // import { PaymentPage } from './../pages/payment/payment';
 import { LoginPage } from './../pages/login/login';
@@ -60,7 +56,7 @@ import { firebaseConfig } from "../services/credentials";
 // import { Network } from '@ionic-native/network';
 // import { ForgetPage } from '../pages/forget/forget';
 // import { EqualValidator } from '../services/EqualValidator';
-// import { CatalogosProvider } from '../Providers/catalogos/catalogos';
+import { CatalogosProvider } from '../Providers/catalogos/catalogos';
 // import { ObserverProvider } from '../Providers/observer/observer';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
@@ -74,7 +70,7 @@ import { HttpModule } from '@angular/http';
     WelcomePage,
     Register,
     LoginPage,
-    // RegisterProvPage,
+     RegisterProvPage,
     // CommentsPage,
     // TimeAgoPipe,
     // TimeServicePage,
@@ -93,8 +89,7 @@ import { HttpModule } from '@angular/http';
     HttpClientModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig, 'labatanga'),
-    AngularFireDatabaseModule,
-
+    AngularFirestoreModule,
     AngularFireAuthModule,
     ProfilePageModule,
    PipesModule,
@@ -110,7 +105,7 @@ import { HttpModule } from '@angular/http';
     Register,
     LoginPage,
     ProfilePage,
-    // RegisterProvPage,
+     RegisterProvPage,
     // CommentsPage,
     // TimeServicePage,
     // SubCategoriesPage,
@@ -123,13 +118,10 @@ import { HttpModule } from '@angular/http';
   providers: [
     StatusBar,
     SplashScreen,
-    AngularFireDatabase,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     Auth,
     UserSCV,
-    ProveedorService,
-    AngularFireStorage,
-    AngularFirestore,
+    ProveedorService, 
     NativeGeocoder,
     // Facebook,
     // Network,
@@ -140,7 +132,7 @@ import { HttpModule } from '@angular/http';
     // File,
     // Camera,
     // Badge,
-    // CatalogosProvider,
+     CatalogosProvider,
     // PayPal,
     // ObserverProvider,
     FCM,

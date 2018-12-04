@@ -1,14 +1,14 @@
 webpackJsonp([4],{
 
-/***/ 567:
+/***/ 560:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProviderProfilePageModule", function() { return ProviderProfilePageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UndefinedPageModule", function() { return UndefinedPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_profile__ = __webpack_require__(616);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__undefined__ = __webpack_require__(619);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,33 +18,33 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var ProviderProfilePageModule = /** @class */ (function () {
-    function ProviderProfilePageModule() {
+var UndefinedPageModule = /** @class */ (function () {
+    function UndefinedPageModule() {
     }
-    ProviderProfilePageModule = __decorate([
+    UndefinedPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__provider_profile__["a" /* ProviderProfilePage */],
+                __WEBPACK_IMPORTED_MODULE_2__undefined__["a" /* UndefinedPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__provider_profile__["a" /* ProviderProfilePage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__undefined__["a" /* UndefinedPage */]),
             ],
         })
-    ], ProviderProfilePageModule);
-    return ProviderProfilePageModule;
+    ], UndefinedPageModule);
+    return UndefinedPageModule;
 }());
 
-//# sourceMappingURL=provider-profile.module.js.map
+//# sourceMappingURL=undefined.module.js.map
 
 /***/ }),
 
-/***/ 616:
+/***/ 619:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProviderProfilePage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UndefinedPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -57,29 +57,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the ProviderProfilePage page.
+ * Generated class for the UndefinedPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var ProviderProfilePage = /** @class */ (function () {
-    function ProviderProfilePage(navCtrl, navParams) {
+var UndefinedPage = /** @class */ (function () {
+    function UndefinedPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
     }
-    ProviderProfilePage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad ProviderProfilePage');
+    UndefinedPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad UndefinedPage');
     };
-    ProviderProfilePage = __decorate([
+    UndefinedPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-provider-profile',template:/*ion-inline-start:"/home/dsilva/Documentos/IONIC/LABANTANGA/src/pages/provider/provider-profile/provider-profile.html"*/'<!--\n  Generated template for the ProviderProfilePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>ProviderProfile</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/home/dsilva/Documentos/IONIC/LABANTANGA/src/pages/provider/provider-profile/provider-profile.html"*/,
+            selector: 'page-undefined',template:/*ion-inline-start:"C:\proys\ionic\labatanga\src\pages\undefined\undefined.html"*/'<!--\n  Generated template for the UndefinedPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>undefined</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"C:\proys\ionic\labatanga\src\pages\undefined\undefined.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
-    ], ProviderProfilePage);
-    return ProviderProfilePage;
+    ], UndefinedPage);
+    return UndefinedPage;
 }());
 
-//# sourceMappingURL=provider-profile.js.map
+//# sourceMappingURL=undefined.js.map
 
 /***/ })
 

@@ -83,7 +83,7 @@
           Estado
         </ion-label>
         <ion-select formControlName="State" (ionChange)="getCities($event)">
-          <ion-option *ngFor="let item of States|async" [value]="item.key">{{item.payload.val().name}}</ion-option>
+          <ion-option *ngFor="let item of States|async" [value]="item.$key">{{item.name}}</ion-option>
         </ion-select>
       </ion-item>
       <ion-item *ngIf="State.errors && State.dirty">
@@ -94,7 +94,7 @@
           Ciudad
         </ion-label>
         <ion-select formControlName="City">
-          <ion-option *ngFor="let item of Cities|async" [value]="item.key">{{item.payload.val().name}}</ion-option>
+          <ion-option *ngFor="let item of Cities|async" [value]="item.$key">{{item.name}}</ion-option>
         </ion-select>
       </ion-item>
       <ion-item *ngIf="City.errors && City.dirty">
@@ -178,24 +178,24 @@
         <ion-label color="primary" floating>
           Tema
         </ion-label>
-        <ion-select formControlName="Category" (ionChange)="getSubCategories($event)">
-          <ion-option *ngFor="let item of Categories|async" [value]="item.key">{{item.payload.val().Name}}</ion-option>
+        <ion-select formControlName="Theme" (ionChange)="getCategories($event)">
+          <ion-option *ngFor="let tema of Themes|async" [value]="tema.$key">{{tema.Name}}</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item *ngIf="Category!=null">
+      <ion-item *ngIf="Theme!=null">
         <ion-label color="primary" floating>
           Categoria
         </ion-label>
-        <ion-select formControlName="Subcategory" (ionChange)="getSubCategories2( $event)">
-          <ion-option *ngFor="let item of SubCategories|async" [value]="item.key">{{item.payload.val().Name}}</ion-option>
+        <ion-select formControlName="Category" (ionChange)="getSubCategories($event)">
+          <ion-option *ngFor="let cat of Categories|async" [value]="cat.$key">{{cat.Name}}</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item *ngIf="hideSubcat2">
+      <ion-item *ngIf="Category != null">
         <ion-label color="primary" floating>
           Sub Categoria
         </ion-label>
-        <ion-select formControlName="Subcategory2">
-          <ion-option *ngFor="let item of SubCategories2|async" [value]="item.key">{{item.payload.val().Name}}</ion-option>
+        <ion-select formControlName="SubCategory">
+          <ion-option *ngFor="let subc of SubCategories|async" [value]="subc.$key">{{subc.Name}}</ion-option>
         </ion-select>
       </ion-item>
     </ion-list>

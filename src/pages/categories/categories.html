@@ -7,58 +7,53 @@
 
 <ion-content class="card-background-page">
   <div>
-    <ion-searchbar placeholder="¿Qué estas buscando?" [(ngModel)]="txtsearch" [debounce]="750" [animated]=true (ionInput)="getFromAlgolia($event)">
-    </ion-searchbar>
-    <!-- <ion-item>
-      <ion-input type="" placeholder="¿Qué estas buscando?" [(ngModel)]="txtsearch" ></ion-input> 
-    </ion-item>
-    <ion-item>
-      <button ion-button icon-only (click)="getFromAlgolia()" >
-        <ion-icon name="search"></ion-icon>
-      </button>
-    </ion-item> -->
+    <ion-searchbar placeholder="¿Qué estas buscando?" [(ngModel)]="txtsearch" [debounce]="750" [animated]=true
+      (ionInput)="getFromAlgolia($event)">
+    </ion-searchbar> 
   </div>
-  <div *ngIf="algoliaSearch">
-   
-
+  <div *ngIf="algoliaSearch"> 
     <ion-list>
-      <ion-item>
-        <div item-left class="logo">
-          <img src="">
-        </div>
-        <ion-card style="border-left: 3px solid #ffae00" *ngFor="let prov of algResult"
-          (click)="itemTapped($event,prov, prov.$value, prov.$key)">
+        <ion-item-sliding #slidingItem *ngFor="let prov of algResult" (click)="itemTapped($event,prov, prov.$value, prov.$key)">
+            <ion-item>
+                <div item-left class="logo">
+                  <img src="">
+                </div>
+                <ion-card style="border-left: 3px solid #ffae00" >
+                  <ion-row>
+                    <ion-col width-80>
+                      <strong> {{prov.CompanyName}}</strong>
+                    </ion-col>
+                    <ion-col width-20 text-right>
+                      <!-- <ion-badge *ngIf="getRating(prov.rating)==0" color="secondary">Nuevo</ion-badge>
+                      <span *ngIf="getRating(prov.rating)>0">
+                        <ion-icon color="yellow" style=" text-shadow: 1px 1px 1px rgb(54, 63, 0);" name="md-star"></ion-icon>
+                        <span style="color:black;">{{getRating(prov.rating)}} </span>
+                        <span style="color:gray">({{TotalRating(prov.rating)}}) </span>
+                      </span> -->
+                    </ion-col>
+                  </ion-row>
+                  <ion-card-content>
+                    <div class="text-description">
+                      {{ ( prov.Description.length>100)? ( prov.Description | slice:0:100)+'..':( prov.Description) }}
+                    </div>
+                    <div class="item-note" item-end>
+        
+                    </div>
+                  </ion-card-content>
+                </ion-card>
+              </ion-item>
+            <ion-item-options>
+              <button ion-button (click)="Cotizar(prov.$key)">Cotizar</button>
+            </ion-item-options>
+          </ion-item-sliding>
   
-          <ion-row>
-            <ion-col width-80>
-              <strong> {{prov.CompanyName}}</strong>
-            </ion-col>
-            <ion-col width-20 text-right>
-              <!-- <ion-badge *ngIf="getRating(prov.rating)==0" color="secondary">Nuevo</ion-badge>
-              <span *ngIf="getRating(prov.rating)>0">
-                <ion-icon color="yellow" style=" text-shadow: 1px 1px 1px rgb(54, 63, 0);" name="md-star"></ion-icon>
-                <span style="color:black;">{{getRating(prov.rating)}} </span>
-                <span style="color:gray">({{TotalRating(prov.rating)}}) </span>
-              </span> -->
-            </ion-col>
-          </ion-row>
-          <ion-card-content>
-            <div class="text-description">
-              {{ ( prov.Description.length>100)? ( prov.Description | slice:0:100)+'..':( prov.Description) }}
-            </div>
-            <div class="item-note" item-end>
-  
-            </div>
-          </ion-card-content>
-        </ion-card>
-      </ion-item>
     </ion-list>
   </div>
   <div *ngIf="!algoliaSearch && (categories|async)">
     <ion-card *ngFor="let cat of categories|async" (click)="getProviders(cat)">
-      <img [src]="'assets/imgs/categories/' + cat.payload.val().img">
-      <div class="card-title">{{cat.payload.val().Name}}</div>
-      <div class="card-subtitle">{{getSubCats(cat.payload.val())}}</div>
+      <img [src]="'assets/imgs/categories/' + cat.img">
+      <div class="card-title">{{cat.Name}}</div>
+      <!-- <div class="card-subtitle">{{getSubCats(cat)}}</div> -->
     </ion-card>
   </div>
 </ion-content>

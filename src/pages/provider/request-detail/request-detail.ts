@@ -1,15 +1,11 @@
-import { ObserverProvider } from './../../../Providers/observer/observer';
-import { AngularFireDatabase } from 'angularfire2/database';
-import { Observable } from 'rxjs/Observable';
+
+import { Observable } from 'rxjs';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the RequestDetailPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { AngularFirestore } from 'angularfire2/firestore';
+import { IContracted, IUser } from '../../../services/Models';
+import { UserSCV } from '../../../Providers/User';
+import { map } from 'rxjs/operators';
 
 // @IonicPage()
 @Component({
@@ -19,31 +15,28 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class RequestDetailPage {
   public uid: string
   public request: any
-  public user: any
-  constructor(public navCtrl: NavController, public afDB: AngularFireDatabase, public subs: ObserverProvider,
+  public user: IUser
+  constructor(public navCtrl: NavController, public afDB: AngularFirestore, public usrsvc: UserSCV,
     public navParams: NavParams) {
     this.uid = navParams.get("uid")
-    let key = navParams.get("key")
-    let subContracts = this.afDB.object("Providers/" + this.uid + "/Contracts/" + key)
-      .snapshotChanges().subscribe(s => {
-        this.request = s.payload.val()
-        this.getUser(s.payload.val().UserID)
-      })
-
-    this.subs.add(subContracts)
+    usrsvc.getUser().toPromise().then(e => { 
+      // let key = navParams.get("key")
+    this.afDB.doc<IContracted>("Providers/" + this.uid + "/Contracts/" + e.$key)
+        .snapshotChanges().subscribe(s => {
+          this.request = s.payload.data()
+          this.getUser(s.payload.data().UserID)
+        })
+    }) 
   }
   private getUser(UserID: string) {
-    let subuser = this.afDB.object("Users/" + UserID).snapshotChanges()
+    let subuser = this.afDB.collection<IUser>("Users").doc(UserID).snapshotChanges()
       .subscribe(s => {
-        this.user = s.payload.val()
+        this.user = s.payload.data() as IUser
       })
-    this.subs.add(subuser)
   }
 
-  getUserName(user: any) {
-    if (user != null)
-      return user.FirstName + " " + user.LastName + " " + user.LastName2
-  }
+  getUserName(user: IUser) { return user ? user.FirstName + " " + user.LastName + " " + user.LastName2 : "" }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad RequestDetailPage');
   }

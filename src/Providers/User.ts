@@ -1,7 +1,7 @@
 import { IUser } from './../services/Models';
 import { Injectable } from '@angular/core'; 
-import { Observable } from 'rxjs';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs'; 
+import { AngularFirestore } from 'angularfire2/firestore';
 
 @Injectable()
 export class UserSCV {
@@ -16,8 +16,8 @@ export class UserSCV {
     Dispose() {
         this.User = null
     }
-    setUser(uid) { 
-        this.User = this.afDB.doc<IUser>("Users/" + uid).valueChanges()
+    setUser(uid: string) { 
+        this.User = this.afDB.collection("Users").doc<IUser>(uid).valueChanges()
         return this.User
     }
 }

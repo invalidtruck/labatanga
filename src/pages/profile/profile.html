@@ -1,9 +1,6 @@
 <ion-header>
   <ion-navbar hideBackButton="true" color="primary">
-     
-
     <ion-title>Perfil</ion-title>
-
     <ion-buttons end>
       <button ion-button icon-only (click)="saveProfile(user)">
         <ion-icon name="md-cloud-upload"></ion-icon>
@@ -17,7 +14,7 @@
   <div id="profile-bg" style="background:url('../assets/imgs/profile/back-user2.png'); background-size: cover;"></div>
   <div id="content">
     <div id="profile-info">
-      <img id="profile-image" [src]="(user|async)?.img">
+      <img id="profile-image" [src]="(user|async)?.imgUrl">
       <h3 id="profile-name">
         {{ (user | async)?.FirstName + ' ' +(user | async)?.LastName + ' '+ (user | async)?.LastName2 }}
       </h3>

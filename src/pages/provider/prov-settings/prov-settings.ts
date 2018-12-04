@@ -53,12 +53,12 @@ export class ProvSettingsPage {
 
 
 
-    const image = `data:image/jpeg;base64,${result}`;
-    const task = this.storage.ref("providers/" + this.uid + "/" + name).putString(image, 'data_url');
-    let filename = task.downloadURL()
-    this.afDB.object("Providers/" + this.uid + "/" + "images").update({
-      one: filename
-    })
+    // const image = `data:image/jpeg;base64,${result}`;
+    // const task = this.storage.ref("providers/" + this.uid + "/" + name).putString(image, 'data_url');
+    // let filename = task.()
+    // this.afDB.object("Providers/" + this.uid + "/" + "images").update({
+    //   one: filename
+    // })
   }
 
 

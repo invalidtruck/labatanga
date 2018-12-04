@@ -1,14 +1,14 @@
 import { CatalogosProvider } from './../../../Providers/catalogos/catalogos';
-
 import { AlertController } from 'ionic-angular/components/alert/alert-controller'
 import { Auth } from './../../../services/auth'
-import { AngularFireDatabase } from 'angularfire2/database'
-import { Observable } from 'rxjs/Observable'
+import { Observable } from 'rxjs'
 import { Component } from '@angular/core'
 import { NavController, NavParams } from 'ionic-angular'
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms'
 import { LoginPage } from "../../login/login"
 import { FCM } from '@ionic-native/fcm'
+import { AngularFirestore } from 'angularfire2/firestore';
+import { ICategories, ISubCategories, ICiudades, IEstados } from '../../../services/Models';
 
 @Component({
   selector: 'page-register-prov',
@@ -36,23 +36,23 @@ export class RegisterProvPage {
   Email: AbstractControl
   Password: AbstractControl
   PasswordConfirm: AbstractControl
+  Theme: AbstractControl
   Category: AbstractControl
   Subcategory: AbstractControl
-  Subcategory2: AbstractControl
 
-  States: Observable<any>
-  Cities: Observable<any>
-  Categories: Observable<any>
-  SubCategories: Observable<any>
-  SubCategories2: Observable<any>
+  States: Observable<IEstados[]>
+  Cities: Observable<ICiudades[]>
+  Themes: Observable<ICategories[]>
+  Categories: Observable<ISubCategories[]>
+  SubCategories: Observable<ISubCategories[]>
   PASSWORD_REGEX = `.*(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*]).*`
   CP_REGEX = "[0-9]{5}"
 
-  constructor(public navCtrl: NavController, public afDB: AngularFireDatabase, private fcm: FCM,
+  constructor(public navCtrl: NavController, public afDB: AngularFirestore, private fcm: FCM,
     public cat: CatalogosProvider,
     public alertCtrl: AlertController,
     public navParams: NavParams, public fbuild: FormBuilder, public auth: Auth) {
-    this.Categories = afDB.list("Categories").valueChanges()
+    this.Themes = this.cat.getThemes()
     this.formgroup = fbuild.group({
       FirstName: ['', Validators.compose([Validators.minLength(3), Validators.maxLength(30), Validators.pattern('^[\u00F1A-Za-z _]*[\u00F1A-Za-z][\u00F1A-Za-z _]*'), Validators.required])],
       CompanyName: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
@@ -68,9 +68,9 @@ export class RegisterProvPage {
       LastName2: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
       Email: ['', Validators.compose([Validators.maxLength(30), Validators.email])],
       EmailConfirm: ['', Validators.compose([Validators.maxLength(30), Validators.email])],
+      Theme: ['', Validators.required],
       Category: ['', Validators.required],
-      Subcategory: ['', Validators.required],
-      Subcategory2: [''],
+      SubCategory: [''],
       Password: ['', Validators.compose([Validators.minLength(8),
       Validators.maxLength(12), Validators.required, Validators.pattern(this.PASSWORD_REGEX)])],
       PasswordConfirm: ['', Validators.compose([Validators.required])],
@@ -94,11 +94,11 @@ export class RegisterProvPage {
     this.LastName2 = this.formgroup.controls['LastName2']
     this.Email = this.formgroup.controls['Email']
     this.Password = this.formgroup.controls['Password']
+    this.Theme = this.formgroup.controls['Theme']
     this.Category = this.formgroup.controls['Category']
-    this.Subcategory = this.formgroup.controls['Subcategory']
-    this.Subcategory2 = this.formgroup.controls['Subcategory2']
+    this.Subcategory = this.formgroup.controls['SubCategory']
 
-    this.Categories = this.cat.getCategories()
+    this.Categories = this.cat.getThemes()
     this.States = this.cat.getStates()
   }
 
@@ -136,15 +136,15 @@ export class RegisterProvPage {
           LastName2: self.LastName2.value,
           Email: self.Email.value,
           uid: data.uid,
+          Theme: self.Theme.value,
           Category: self.Category.value,
-          Subcategory: self.Subcategory.value,
-          Subcategory2: self.Subcategory2.value,
+          SubCategory: self.Subcategory.value,
           lastPayment: Date.now(),
-          ComposeQuery: `${self.City.value}_${self.Category.value}_${self.Subcategory.value}_${self.Subcategory2.value}`,
+          // ComposeQuery: `${self.City.value}_${self.Category.value}_${self.Subcategory.value}_${self.Subcategory2.value}`,
           isProvider: true
         }
         this.fcm.getToken().then(token=>{
-          this.afDB.object("Providers/" + data.uid).set(prov)
+          this.afDB.collection("Providers").doc(data.uid).set(prov)
           this.CreateUser(data.uid, {
             Email: self.Email.value,
             FirstName: self.Name.value,
@@ -178,7 +178,7 @@ export class RegisterProvPage {
     }
   }
   CreateUser(uid: string, data: any) {
-    this.afDB.object("Users/" + uid).set(data)
+    this.afDB.collection("Users").doc(uid).set(data)
       .catch(error =>
         console.log(error)
       )
@@ -191,13 +191,11 @@ export class RegisterProvPage {
     this.Cities = this.cat.getCities(stateid)
   }
 
-  getSubCategories(item: string) {
-    this.SubCategories = this.cat.getSubCategories(item)
+  getCategories(theme: string) {
+    this.Categories = this.cat.getCategories(theme)
   }
-  getSubCategories2(item: string) {
-    this.SubCategories2 = this.cat.getSubCategories2(item, this.Category.value)
-    this.SubCategories2.subscribe(s => {
-      this.hideSubcat2 = (s.length > 0)
-    })
+  getSubCategories(Cat: string) {
+    this.SubCategories = this.cat.getSubCategories(Cat, this.Theme.value) 
   }
+ 
 }

@@ -1,17 +1,16 @@
-import { query } from '@angular/core/src/animation/dsl';
-import { ObserverProvider } from './../../Providers/observer/observer';
 import { SubCategoriesPage } from './../sub-categories/sub-categories';
 import { DetailsPage } from './../details/details';
 import { Observable } from 'rxjs/Observable';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
-import { AngularFireDatabase } from 'angularfire2/database';
-import { ICategories } from '../../services/Models';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular'; 
+import { ICategories, ISubCategories, IProveedor } from '../../services/Models';
 import { ListPage } from '../list/list';
 import { OrderModule } from 'ngx-order-pipe';
 import { TimeServicePage } from '../time-service/time-service';
 import { Geolocation } from '@ionic-native/geolocation'; 
 import * as algoliasearch from 'algoliasearch'
+import { AngularFirestore } from 'angularfire2/firestore';
+import { map } from 'rxjs/operators';
 
 @IonicPage()
 @Component({
@@ -19,7 +18,7 @@ import * as algoliasearch from 'algoliasearch'
   templateUrl: 'categories.html',
 })
 export class CategoriesPage {
-  categories: Observable<any[]>;
+  categories: Observable<ICategories[]>;
   coords: any
   algoliaSearch: boolean
   algResult: any
@@ -32,46 +31,39 @@ export class CategoriesPage {
   ALGOLIA_APP_ID: string = "HD00BWMGMW"
   ALGOLIA_API_KEY: string = "42293ab5c8f0c8019b68f3c24d7d4643"
 
-  constructor(public navCtrl: NavController,
-    public subs: ObserverProvider,
+  constructor(public navCtrl: NavController, 
     private geolocation: Geolocation,
     public navParams: NavParams,
-    public afDB: AngularFireDatabase,
+    public afDB: AngularFirestore,
     public loadingCtrl: LoadingController) {
     this.client = algoliasearch(this.ALGOLIA_APP_ID, this.ALGOLIA_API_KEY, { protocol: 'https' })
     this.index = this.client.initIndex("Providers")
 
-    let loader = this.loadingCtrl.create({
-      content: "Cargando...",
-      spinner: "dots"
-    });
-    loader.present();
-
-    this.categories = this.afDB.list("CategoriesNew").snapshotChanges();
-    let subcat = this.categories.subscribe(s => {
-      loader.dismiss();
-
-    })
-    this.geolocation.getCurrentPosition().then((resp) => {
-      this.coords = { lat: resp.coords.latitude, lon: resp.coords.longitude }
-      console.log(' getting location', resp);
-    }).catch((error) => {
-      console.log('Error getting location in categories', error);
-    });
-    let watch = this.geolocation.watchPosition();
-    let subwatch = watch.subscribe((data) => {
-      let x = data.coords
-      console.log('Error getting location in categories', data);
-      // data can be a set of coordinates, or an error (if an error occurred).
-      // data.coords.longitude
-    });
-
-    this.subs.addMany(subcat, subwatch)
-
+   
   }
-  getSubCats(Cat: any) {
-    if (Cat != null && Cat.SubCategories != null) {
-      const subcats = Object.keys(Cat.SubCategories).length
+async init()
+{
+  let loader = this.loadingCtrl.create({
+    content: "Cargando...",
+    spinner: "dots"
+  });
+  loader.present();
+
+  this.categories = this.afDB.collection("Categorias").snapshotChanges().pipe(
+    map(actions => actions.map(a => { 
+      const data = a.payload.doc.data() as ICategories;
+      const $key = a.payload.doc.id;
+      return { $key, ...data };
+    }))
+  )
+   this.categories.subscribe(s => {
+    loader.dismiss()
+  }) 
+}
+
+  getSubCats(cat: ICategories) {
+    if (cat != null && cat.SubCategories != null) {
+      const subcats = Object.keys(cat.SubCategories).length
       return subcats + " Subcategoria" + (subcats > 1 ? "s" : "")
     }
   }
@@ -86,6 +78,11 @@ export class CategoriesPage {
       console.log(d.hits)
     })
   }
+
+  contract(prov:IProveedor){
+
+  }
+
   itemTapped(event: any, item: any, payload: any, key: any) {
     this.navCtrl.push(DetailsPage, {
       uid: item.uid,
@@ -98,7 +95,7 @@ export class CategoriesPage {
     console.log('ionViewDidLoad CategoriesPage');
   }
   getProviders(cat: any) {
-    this.navCtrl.push(SubCategoriesPage, { CategoryID: cat.payload.val().Value, CategoryName: cat.key })
+    this.navCtrl.push(SubCategoriesPage, { CategoryID: cat.Value, CategoryName: cat.$key })
   }
 
 

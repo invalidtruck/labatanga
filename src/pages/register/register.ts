@@ -1,12 +1,12 @@
 import { Md5 } from 'md5-typescript';
 import { Platform } from 'ionic-angular';
-import { LoginPage } from './../login/login';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { LoginPage } from './../login/login'; 
 import { NavController } from 'ionic-angular';
 import { Component } from "@angular/core";
 import { AngularFireAuth } from 'angularfire2/auth'; 
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms'
 import { FCM } from '@ionic-native/fcm'
+import { AngularFirestore } from 'angularfire2/firestore';
 
 @Component({
     templateUrl: "register.html",
@@ -86,7 +86,7 @@ export class Register {
         }
 
     }
-    async CreateUser(data: any, token: string) {
+    async CreateUser(data: firebase.auth.UserCredential, token: string) {
         var user = {
             Email: this.Email.value,
             FirstName: this.Name.value,
@@ -95,10 +95,11 @@ export class Register {
             Phone: this.Phone.value,
             Gender: this.Gender.value,
             Ages: this.getAge(), 
+            isProvider: false,
             imgUrl:"https://www.gravatar.com/avatar/" + Md5.init(this.Email.value)
         }
         if( token) user[token]= token
-        return await this.db.collection("Users").add(user)
+        return await this.db.collection("Users").doc(data.user.uid).set(user)
 
     }
     getAge() {

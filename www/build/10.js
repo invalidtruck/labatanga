@@ -1,14 +1,14 @@
 webpackJsonp([10],{
 
-/***/ 560:
+/***/ 555:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContractDetailsPageModule", function() { return ContractDetailsPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProvMainPageModule", function() { return ProvMainPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contract_details__ = __webpack_require__(324);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__prov_main__ = __webpack_require__(174);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var ContractDetailsPageModule = /** @class */ (function () {
-    function ContractDetailsPageModule() {
+var ProvMainPageModule = /** @class */ (function () {
+    function ProvMainPageModule() {
     }
-    ContractDetailsPageModule = __decorate([
+    ProvMainPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__contract_details__["a" /* ContractDetailsPage */],
+                __WEBPACK_IMPORTED_MODULE_2__prov_main__["a" /* ProvMainPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__contract_details__["a" /* ContractDetailsPage */]),
-            ],
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__prov_main__["a" /* ProvMainPage */]),
+            ]
         })
-    ], ContractDetailsPageModule);
-    return ContractDetailsPageModule;
+    ], ProvMainPageModule);
+    return ProvMainPageModule;
 }());
 
-//# sourceMappingURL=contract-details.module.js.map
+//# sourceMappingURL=prov-main.module.js.map
 
 /***/ })
 

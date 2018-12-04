@@ -9,7 +9,7 @@ export class Auth {
     public async registerEvent(data: any, fn: Function) {
         try {
             let user = await this.fire.auth.createUserWithEmailAndPassword(data.Email, data.Password)
-            let smail = await user.sendEmailVerification()
+            let smail = await user.user.sendEmailVerification()
             fn(smail)
         }
         // return this.fire.auth.createUserWithEmailAndPassword(data.Email, data.Password)
