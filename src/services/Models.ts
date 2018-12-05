@@ -1,4 +1,4 @@
-import { DateTime } from "ionic-angular/components/datetime/datetime"; 
+import { DateTime } from "ionic-angular/components/datetime/datetime";
 import { DocumentChangeType, DocumentReference, DocumentData } from '@angular/fire/firestore';
 
 export interface IUser {
@@ -14,14 +14,13 @@ export interface IUser {
     Phone: string
     Contracted: IContracted[],
     token: string,
-    uidProvider:string,
-    isProvider:Boolean
+    uidProvider: string,
+    isProvider: Boolean
 }
-export interface IProviderComments
-{
-    user:IUser
-    comment:String
-    time:DateTime
+export interface IProviderComments {
+    user: IUser
+    comment: String
+    time: DateTime
 }
 export interface IQuery {
     $key: string
@@ -78,7 +77,7 @@ export interface ISubCategories {
     $key: string
     Name: string
     Value: number
-    SubCategories:ISubCategories
+    SubCategories: ISubCategories
 }
 export interface IDataRequest {
     $key: string
@@ -89,16 +88,37 @@ export interface IDataRequest {
     timestamp: string
 }
 
-export interface IEstados{
-    $key:string
-    name:string
-    id:number
+export interface IEstados {
+    $key: string
+    name: string
+    id: number
 }
 
-export interface ICiudades{
-    $key:string
-    id:number
-    name:string
+export interface ICiudades {
+    $key: string
+    id: number
+    name: string
     inegiid: number
-    stateid:number 
+    stateid: number
+}
+
+export interface ISearchOptions {
+    city: string
+    state: string
+}
+
+export interface IChats {
+    $key: string
+    UserUid: string
+    ProviderUid: string
+    Status: string
+    Date: number
+    Messages: IMessage
+}
+
+export interface IMessage {
+    $key: string
+    Message: string
+    uid: string
+    isProvider: boolean
 }

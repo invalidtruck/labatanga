@@ -5,11 +5,11 @@
     
   </ion-navbar> -->
   <ion-toolbar color="primary">
- 
+
     <ion-title>Categorias</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only color="royal"  (click)="more()">
-        <ion-icon name="more"></ion-icon>
+      <button ion-button icon-only color="royal" (click)="OpenSettings()">
+        <ion-icon name="md-options"></ion-icon>
       </button>
     </ion-buttons>
   </ion-toolbar>
@@ -19,44 +19,52 @@
   <div>
     <ion-searchbar placeholder="¿Qué estas buscando?" [(ngModel)]="txtsearch" [debounce]="750" [animated]=true
       (ionInput)="getFromAlgolia($event)">
-    </ion-searchbar> 
+    </ion-searchbar>
   </div>
-  <div *ngIf="algoliaSearch"> 
+  <div *ngIf="algoliaSearch">
     <ion-list>
-        <ion-item-sliding #slidingItem *ngFor="let prov of algResult" (click)="itemTapped($event,prov, prov.$value, prov.$key)">
-            <ion-item>
+      <ion-item-sliding #slidingItem *ngFor="let prov of algResult">
+        <ion-item>
+
+          <ion-card class="card-borders" (click)="itemTapped($event,prov, prov.$value, prov.$key)">
+            <ion-row>
+              <ion-col col-4>
                 <div item-left class="logo">
-                  <img src="">
+                  <img *ngIf="prov.logo" [src]="prov.logo">
+                  <img *ngIf="!prov.logo" src="../../assets/imgs/noimage.png">
                 </div>
-                <ion-card style="border-left: 3px solid #ffae00" >
-                  <ion-row>
-                    <ion-col width-80>
-                      <strong> {{prov.CompanyName}}</strong>
-                    </ion-col>
-                    <ion-col width-20 text-right>
-                      <!-- <ion-badge *ngIf="getRating(prov.rating)==0" color="secondary">Nuevo</ion-badge>
-                      <span *ngIf="getRating(prov.rating)>0">
-                        <ion-icon color="yellow" style=" text-shadow: 1px 1px 1px rgb(54, 63, 0);" name="md-star"></ion-icon>
-                        <span style="color:black;">{{getRating(prov.rating)}} </span>
-                        <span style="color:gray">({{TotalRating(prov.rating)}}) </span>
-                      </span> -->
-                    </ion-col>
-                  </ion-row>
-                  <ion-card-content>
-                    <div class="text-description">
-                      {{ ( prov.Description.length>100)? ( prov.Description | slice:0:100)+'..':( prov.Description) }}
-                    </div>
-                    <div class="item-note" item-end>
-        
-                    </div>
-                  </ion-card-content>
-                </ion-card>
-              </ion-item>
-            <ion-item-options>
-              <button ion-button (click)="Cotizar(prov.$key)">Cotizar</button>
-            </ion-item-options>
-          </ion-item-sliding>
-  
+              </ion-col>
+              <ion-col col-8>
+                <ion-row>
+                  <ion-col width-80>
+                    <strong> {{prov.CompanyName}}</strong>
+                  </ion-col>
+                  <ion-col width-30 text-right>
+                    <ion-badge *ngIf="getRating(prov.rating)==0" color="secondary">Nuevo</ion-badge>
+                    <span *ngIf="getRating(prov.rating)>0">
+                      <ion-icon color="yellow" style=" text-shadow: 1px 1px 1px rgb(54, 63, 0);" name="md-star"></ion-icon>
+                      <span style="color:black;">{{getRating(prov.rating)}} </span>
+                      <span style="color:gray">({{TotalRating(prov.rating)}}) </span>
+                    </span>
+                  </ion-col>
+                </ion-row> 
+                <ion-card-content>
+                  <div class="text-description text-left">
+                    {{ ( prov.Description.length>100)? ( prov.Description | slice:0:100)+'..':( prov.Description) }}
+                  </div>
+                  <div class="item-note" item-end>
+
+                  </div>
+                </ion-card-content>
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-item>
+        <ion-item-options>
+          <button ion-button (click)="Cotizar(prov)">Cotizar</button>
+        </ion-item-options>
+      </ion-item-sliding>
+
     </ion-list>
   </div>
   <div *ngIf="!algoliaSearch && (categories|async)">

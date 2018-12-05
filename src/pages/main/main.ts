@@ -17,9 +17,9 @@ export class MainPage {
   profileRoot = 'ProfilePage'
   homeRoot = 'HomePage'
   categoriesRoot = 'CategoriesPage'
-  configRoot = 'ConfigPage'
-  requestRoot = 'RequestPage'
-  uid: String
+  // configRoot = 'ConfigPage'
+  requestRoot = 'ChatsPage'
+  uid: string
   Contracts: Observable<any>
 
   constructor(public navCtrl: NavController, 
@@ -29,9 +29,7 @@ export class MainPage {
               public navParams: NavParams) {
 
     this.uid = navParams.get("uid");
-    this.Contracts = this.afDB.collection("Users/" + this.uid + "/Contracts/"
-      // ref => ref.orderByChild("status").equalTo("A")
-    ).valueChanges(); 
+    this.Contracts = this.afDB.collection("Users").doc( this.uid.toString()).collection("Contracts").valueChanges() 
   }
 
   ionViewDidEnter(){

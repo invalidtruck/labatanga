@@ -33375,9 +33375,20 @@ page-categories ion-spinner * {
   fill: #00e8f0;
 }
 
+page-categories .card-borders {
+  border: 2px solid   #ffae00;
+  border-left: 10px solid #ffae00;
+  border-radius: 0px 0px 30px 10px;
+}
+
+page-categories .logo img {
+  width: 100%;
+  min-height: 80px;
+}
+
 page-categories .card-background-page ion-card {
   position: relative;
-  text-align: center;
+  text-align: left;
 }
 
 page-categories .card-background-page .card-title {
@@ -33403,12 +33414,21 @@ page-categories .item-md.item-block .item-inner {
   border: none !important;
 }
 
+page-categories .label-md {
+  margin: 0px !important;
+}
+
 page-categories .item-rating {
   position: absolute;
   bottom: 0;
   z-index: 100;
   background: transparent;
   border: none;
+}
+
+page-categories .text-description {
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .front {

@@ -1,3 +1,5 @@
+import { ChatPageModule } from './../pages/chat/chat.module';
+import { ChatsPageModule } from './../pages/chats/chats.module';
 import { ConfigPageModule } from './../pages/config/config.module';
 import { FCM } from '@ionic-native/fcm'; 
 // import { PayPal } from '@ionic-native/paypal';
@@ -34,6 +36,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { ProfilePageModule } from './../pages/profile/profile.module'; 
 import { MainPageModule } from './../pages/main/main.module';
+
 import { MyApp } from './app.component';
 // import { CommentsPage } from '../pages/comments/comments';
 import { ListPage } from '../pages/list/list';
@@ -97,6 +100,8 @@ import { HttpModule } from '@angular/http';
    PipesModule,
     MainPageModule,
     ConfigPageModule,
+    ChatsPageModule,
+    ChatPageModule,
     // ProvMainPageModule
   ],
   bootstrap: [IonicApp],

@@ -6,11 +6,19 @@ page-categories {
     stroke: #06d106;
     fill: #00e8f0;
   }
-  
+  .card-borders{
+    border: 2px solid   #ffae00;
+    border-left: 10px solid #ffae00;
+    border-radius: 0px 0px 30px 10px;
+  }
+  .logo img{
+    width: 100%;
+    min-height: 80px;
+  }
   .card-background-page {
     ion-card {
       position: relative;
-      text-align: center;
+      text-align: left;
     }
     .card-title {
       position: absolute;
@@ -34,7 +42,9 @@ page-categories {
   .item-md.item-block .item-inner {
     border: none !important;
   }
-  
+  .label-md{
+    margin:0px!important;
+  }
   .item-rating {
     position: absolute;
     bottom: 0;
@@ -42,5 +52,8 @@ page-categories {
     background: transparent;
     border: none;
   }
-  
+  .text-description { 
+    overflow-wrap: break-word;
+    white-space: normal;
+}
 }

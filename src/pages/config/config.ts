@@ -1,27 +1,32 @@
-// import { Camera, CameraOptions } from '@ionic-native/camera';
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
- import { storage, initializeApp } from 'firebase';
-import { firebaseConfig } from "../../services/credentials";
-/**
- * Generated class for the ConfigPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
+import { AbstractControl } from '@angular/forms';
+ 
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular'; 
+import { Observable } from 'rxjs';
+import { IEstados, ICiudades, ISearchOptions } from '../../services/Models';
+import { AngularFirestore } from 'angularfire2/firestore';
+import { CatalogosProvider } from '../../Providers/catalogos/catalogos';
+import { Content } from 'ionic-angular/components/content/content';
+  
 @IonicPage()
 @Component({
   selector: 'page-config',
   templateUrl: 'config.html',
 })
 export class ConfigPage {
-
-  constructor(private navCtrl: NavController,
-    //  public camera: Camera,
-      public navParams: NavParams) {
-    // initializeApp(firebaseConfig);
-
+  States : Observable<IEstados[]>
+  Cities: Observable<ICiudades[]>
+  @ViewChild("City") City
+  @ViewChild("State") State 
+  constructor(private navCtrl: NavController,public cat:CatalogosProvider, 
+    public afDB:AngularFirestore,public viewCtrl: ViewController) { 
+    this.States= this.cat.getStates()
+    
+  }
+  
+  dismiss() {
+    let data = { city: this.City.value, state:this.State.value } as ISearchOptions;
+    this.viewCtrl.dismiss(data);
   }
   // async takePhoto() {
 
@@ -41,11 +46,10 @@ export class ConfigPage {
   //   const pictures = storage().ref('pictures');
   //   pictures.putString(image, 'data_url');
   // }
-
-
-
-
-
+  getCities(stateid:string)
+  {
+    this.Cities = this.cat.getCities(stateid)
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad ConfigPage');
   }

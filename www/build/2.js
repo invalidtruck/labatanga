@@ -1,13 +1,13 @@
 webpackJsonp([2],{
 
-/***/ 557:
+/***/ 560:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProvRequestPageModule", function() { return ProvRequestPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__prov_request__ = __webpack_require__(609);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -45,9 +45,9 @@ var ProvRequestPageModule = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProvRequestPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__request_detail_request_detail__ = __webpack_require__(610);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operators__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_firestore__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_firestore__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_firestore___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angularfire2_firestore__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -120,7 +120,7 @@ var ProvRequestPage = /** @class */ (function () {
     };
     ProvRequestPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
-            selector: 'page-prov-request',template:/*ion-inline-start:"C:\proys\ionic\labatanga\src\pages\provider\prov-request\prov-request.html"*/'<!--\n\n  Generated template for the ProvRequestPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>prov-request</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content>\n\n  <ion-list>\n\n    <ion-item-sliding *ngFor="let con of (Contracts|async)">\n\n      <ion-item [ngClass]="(con !=null && con.viewed ) ? \'\':\'notview\'">\n\n        <h2>{{(con.user|async)?.FirstName}}</h2>\n\n        <label>{{con.Description}}</label>\n\n        <label>Tiempo:{{(con.time)}}</label>\n\n\n\n      </ion-item>\n\n      <ion-item-options side="left">\n\n        <button ion-button color="secondary" (click)="onAccept(con.key)">\n\n          <ion-icon style="color:white" name="md-checkmark-circle"></ion-icon>\n\n          Aceptar\n\n        </button>\n\n        <button ion-button color="primary" (click)="onReview(con.key)">\n\n          <ion-icon style="color:white" name="md-trash"></ion-icon>\n\n          Revisar\n\n        </button>\n\n        <button ion-button color="danger" (click)="onCancel(con.key)">\n\n          <ion-icon style="color:white" name="md-trash"></ion-icon>\n\n          Cancelar\n\n        </button>\n\n      </ion-item-options>\n\n    </ion-item-sliding>\n\n  </ion-list>\n\n\n\n</ion-content>'/*ion-inline-end:"C:\proys\ionic\labatanga\src\pages\provider\prov-request\prov-request.html"*/,
+            selector: 'page-prov-request',template:/*ion-inline-start:"D:\proys\ionic\labatanga\src\pages\provider\prov-request\prov-request.html"*/'<!--\n\n  Generated template for the ProvRequestPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>prov-request</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content>\n\n  <ion-list>\n\n    <ion-item-sliding *ngFor="let con of (Contracts|async)">\n\n      <ion-item [ngClass]="(con !=null && con.viewed ) ? \'\':\'notview\'">\n\n        <h2>{{(con.user|async)?.FirstName}}</h2>\n\n        <label>{{con.Description}}</label>\n\n        <label>Tiempo:{{(con.time)}}</label>\n\n\n\n      </ion-item>\n\n      <ion-item-options side="left">\n\n        <button ion-button color="secondary" (click)="onAccept(con.key)">\n\n          <ion-icon style="color:white" name="md-checkmark-circle"></ion-icon>\n\n          Aceptar\n\n        </button>\n\n        <button ion-button color="primary" (click)="onReview(con.key)">\n\n          <ion-icon style="color:white" name="md-trash"></ion-icon>\n\n          Revisar\n\n        </button>\n\n        <button ion-button color="danger" (click)="onCancel(con.key)">\n\n          <ion-icon style="color:white" name="md-trash"></ion-icon>\n\n          Cancelar\n\n        </button>\n\n      </ion-item-options>\n\n    </ion-item-sliding>\n\n  </ion-list>\n\n\n\n</ion-content>'/*ion-inline-end:"D:\proys\ionic\labatanga\src\pages\provider\prov-request\prov-request.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavParams */],
@@ -140,8 +140,8 @@ var ProvRequestPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RequestDetailPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_firestore__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_firestore__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_firestore___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angularfire2_firestore__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Providers_User__ = __webpack_require__(99);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -188,7 +188,7 @@ var RequestDetailPage = /** @class */ (function () {
     };
     RequestDetailPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-request-detail',template:/*ion-inline-start:"C:\proys\ionic\labatanga\src\pages\provider\request-detail\request-detail.html"*/'<!--\n\n  Generated template for the RequestDetailPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Detalles</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n<ion-card>\n\n  <ion-item>\n\n    <h2>{{getUserName(user)}} </h2>\n\n    <p></p>\n\n  </ion-item> \n\n  <ion-card-content>\n\n    <p>{{request?.Description}} en {{request?.time}}</p>\n\n    <p>\n\n      <img [src]="request?.img">\n\n    </p>\n\n  </ion-card-content> \n\n</ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\proys\ionic\labatanga\src\pages\provider\request-detail\request-detail.html"*/,
+            selector: 'page-request-detail',template:/*ion-inline-start:"D:\proys\ionic\labatanga\src\pages\provider\request-detail\request-detail.html"*/'<!--\n\n  Generated template for the RequestDetailPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Detalles</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n<ion-card>\n\n  <ion-item>\n\n    <h2>{{getUserName(user)}} </h2>\n\n    <p></p>\n\n  </ion-item> \n\n  <ion-card-content>\n\n    <p>{{request?.Description}} en {{request?.time}}</p>\n\n    <p>\n\n      <img [src]="request?.img">\n\n    </p>\n\n  </ion-card-content> \n\n</ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\proys\ionic\labatanga\src\pages\provider\request-detail\request-detail.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_firestore__["AngularFirestore"], __WEBPACK_IMPORTED_MODULE_3__Providers_User__["a" /* UserSCV */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])

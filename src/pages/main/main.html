@@ -1,9 +1,10 @@
 <ion-tabs color="primary">
     <ion-tab [root]="profileRoot" [rootParams]="uid" tabTitle="Perfil"  tabIcon="person"></ion-tab>
     <ion-tab [root]="homeRoot" [rootParams]="uid" tabTitle="Top" tabIcon="md-star"></ion-tab>
-    <ion-tab [root]="requestRoot" [rootParams]="uid" tabTitle="Solicitudes" tabIcon="md-paper" tabBadgeStyle="danger" [tabBadge]="getContracts((Contracts|async))"></ion-tab>
-    <ion-tab [root]="categoriesRoot" tabTitle="Categorias" tabIcon="list"></ion-tab>
-    <ion-tab [root]="null" tabTitle="LogOut" tabIcon="list"  (ionSelect)="logout()"> ></ion-tab>
+    <ion-tab [root]="requestRoot" [rootParams]="uid" tabTitle="Solicitudes" tabIcon="ios-chatboxes" 
+    tabBadgeStyle="danger" [tabBadge]="getContracts((Contracts|async))"></ion-tab>
+    <ion-tab [root]="categoriesRoot" [rootParams]="uid" tabTitle="Categorias" tabIcon="list"></ion-tab>
+    <!-- <ion-tab [root]="null" tabTitle="LogOut" tabIcon="list"  (ionSelect)="logout()"> ></ion-tab> -->
     
     <!-- <ion-tab [root]="configRoot" tabTitle="Configuracion" tabIcon="settings"></ion-tab> -->
 </ion-tabs>

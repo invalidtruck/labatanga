@@ -14,5 +14,33 @@
 
 
 <ion-content padding>
-  <button ion-button (click)="takePhoto()">Tomar Foto</button>
+  <ion-list>
+    <ion-item>
+      <ion-label color="primary" floating>
+        Estado
+      </ion-label>
+      <ion-select #State (ionChange)="getCities($event)">
+        <ion-option *ngFor="let item of States|async" [value]="item.$key">{{item.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="State!=null">
+      <ion-label color="primary" floating>
+        Ciudad
+      </ion-label>
+      <ion-select #City>
+        <ion-option *ngFor="let item of Cities|async" [value]="item.$key">{{item.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>
+        Codigo Postal
+      </ion-label>
+      <ion-input type=""></ion-input> 
+    </ion-item>
+    <ion-item> 
+      <button ion-button item-end (click)="dismiss()">
+        Filtrar
+      </button>
+    </ion-item>
+  </ion-list>
 </ion-content>
