@@ -113,12 +113,13 @@ export interface IChats {
     ProviderUid: string
     Status: string
     Date: number
-    Messages: IMessage
+    Messages: IMessage[]
 }
 
 export interface IMessage {
-    $key: string
+    // $key: string
     Message: string
     uid: string
-    isProvider: boolean
+    isProvider: Boolean,
+    Date:number
 }

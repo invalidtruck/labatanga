@@ -27,7 +27,7 @@ var HomePageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_0__home__["a" /* HomePage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_0__home__["a" /* HomePage */]),
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_0__home__["a" /* HomePage */]),
             ],
         })
     ], HomePageModule);
@@ -44,10 +44,10 @@ var HomePageModule = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_fire_firestore__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__details_details__ = __webpack_require__(323);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__details_details__ = __webpack_require__(324);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_operators__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_operators__ = __webpack_require__(15);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -88,9 +88,9 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"D:\proys\ionic\labatanga\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title>Ultimos Contratados</ion-title>\n\n  </ion-navbar> \n\n</ion-header> \n\n<ion-content padding>\n\n  <ion-grid>\n\n    <ion-row *ngFor="let prov of latestProviders|async">\n\n      <ion-col width-50>\n\n          <ion-card style="border-left: 3px solid #ffae00"  (click)="OnClickProv(prov)">\n\n            <ion-row>\n\n              <ion-col width-80>\n\n                <strong> {{prov.Name}}</strong>\n\n              </ion-col> \n\n            </ion-row> \n\n          <ion-card-content>\n\n            Ultima contratación en {{prov.Created_on|  date: \'dd MMM yy\'}}\n\n          </ion-card-content>\n\n        </ion-card> \n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>'/*ion-inline-end:"D:\proys\ionic\labatanga\src\pages\home\home.html"*/,
+            selector: 'page-home',template:/*ion-inline-start:"C:\proys\ionic\labatanga\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title>Ultimos Contratados</ion-title>\n\n  </ion-navbar> \n\n</ion-header> \n\n<ion-content padding>\n\n  <ion-grid>\n\n    <ion-row *ngFor="let prov of latestProviders|async">\n\n      <ion-col width-50>\n\n          <ion-card style="border-left: 3px solid #ffae00"  (click)="OnClickProv(prov)">\n\n            <ion-row>\n\n              <ion-col width-80>\n\n                <strong> {{prov.Name}}</strong>\n\n              </ion-col> \n\n            </ion-row> \n\n          <ion-card-content>\n\n            Ultima contratación en {{prov.Created_on|  date: \'dd MMM yy\'}}\n\n          </ion-card-content>\n\n        </ion-card> \n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>'/*ion-inline-end:"C:\proys\ionic\labatanga\src\pages\home\home.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_0__angular_fire_firestore__["AngularFirestore"]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_0__angular_fire_firestore__["AngularFirestore"]])
     ], HomePage);
     return HomePage;
 }());

@@ -1,6 +1,6 @@
 webpackJsonp([4],{
 
-/***/ 559:
+/***/ 560:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProvProfilePageModule", function() { return ProvProfilePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__prov_profile__ = __webpack_require__(608);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__prov_profile__ = __webpack_require__(609);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -27,7 +27,7 @@ var ProvProfilePageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__prov_profile__["a" /* ProvProfilePage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__prov_profile__["a" /* ProvProfilePage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__prov_profile__["a" /* ProvProfilePage */]),
             ],
         })
     ], ProvProfilePageModule);
@@ -38,13 +38,13 @@ var ProvProfilePageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 608:
+/***/ 609:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProvProfilePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Providers_User__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__ = __webpack_require__(321);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Providers_User__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__ = __webpack_require__(323);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_database___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angularfire2_database__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(11);
@@ -108,9 +108,9 @@ var ProvProfilePage = /** @class */ (function () {
     };
     ProvProfilePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["m" /* Component */])({
-            selector: 'page-prov-profile',template:/*ion-inline-start:"D:\proys\ionic\labatanga\src\pages\provider\prov-profile\prov-profile.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Perfil</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n<ion-content>\n\n  <div id="profile-bg" [style.backgroundImage]="\'url(\' +  getImg(provider|async) + \')\' "></div>\n\n  <div id="content">\n\n    <div id="profile-info">\n\n      <img id="profile-image" [src]="( (provider|async)?.icon ==undefined) ?  (provider|async)?.icon : \'assets/imgs/defaults/profiles/profile_provider.png\'">\n\n      <h3 id="profile-name">{{(provider|async)?.Name}}</h3>\n\n      <span id="profile-description">{{(provider|async)?.Description}}</span>\n\n    </div>\n\n    <div>\n\n      <ion-grid>\n\n        <ion-row style="text-align: center;color:white">\n\n          <ion-col>\n\n            <label>\n\n              {{getDones( (Dones|async) )}}\n\n            </label>\n\n            <br>\n\n            <label>\n\n              Servicios Completados\n\n            </label>\n\n          </ion-col>\n\n          <ion-col>\n\n            <label>\n\n              {{getRequest( (Request|async) )}}\n\n            </label>\n\n            <br>\n\n            <label>\n\n              Pendientes\n\n            </label>\n\n          </ion-col>\n\n          <ion-col>\n\n            <label>\n\n              {{getLoses( (Loses|async) )}}\n\n            </label>\n\n            <br>\n\n            <label>\n\n              Perdidas\n\n            </label>\n\n          </ion-col>\n\n        </ion-row>\n\n      </ion-grid>\n\n    </div>\n\n    <ion-list>\n\n      <ion-item *ngFor="let contract of (provider|async)?.contracts">\n\n        <img class="post-profile-image" src="assets/imgs/misc/cat.jpg"> {{contract.text}}\n\n        <div class="post-time">{{contract.created_at}} something</div>\n\n        <div class="post-options">\n\n          <ion-icon name="undo"></ion-icon>\n\n        </div>\n\n      </ion-item>\n\n    </ion-list>\n\n  </div>\n\n</ion-content>'/*ion-inline-end:"D:\proys\ionic\labatanga\src\pages\provider\prov-profile\prov-profile.html"*/,
+            selector: 'page-prov-profile',template:/*ion-inline-start:"C:\proys\ionic\labatanga\src\pages\provider\prov-profile\prov-profile.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Perfil</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n<ion-content>\n\n  <div id="profile-bg" [style.backgroundImage]="\'url(\' +  getImg(provider|async) + \')\' "></div>\n\n  <div id="content">\n\n    <div id="profile-info">\n\n      <img id="profile-image" [src]="( (provider|async)?.icon ==undefined) ?  (provider|async)?.icon : \'assets/imgs/defaults/profiles/profile_provider.png\'">\n\n      <h3 id="profile-name">{{(provider|async)?.Name}}</h3>\n\n      <span id="profile-description">{{(provider|async)?.Description}}</span>\n\n    </div>\n\n    <div>\n\n      <ion-grid>\n\n        <ion-row style="text-align: center;color:white">\n\n          <ion-col>\n\n            <label>\n\n              {{getDones( (Dones|async) )}}\n\n            </label>\n\n            <br>\n\n            <label>\n\n              Servicios Completados\n\n            </label>\n\n          </ion-col>\n\n          <ion-col>\n\n            <label>\n\n              {{getRequest( (Request|async) )}}\n\n            </label>\n\n            <br>\n\n            <label>\n\n              Pendientes\n\n            </label>\n\n          </ion-col>\n\n          <ion-col>\n\n            <label>\n\n              {{getLoses( (Loses|async) )}}\n\n            </label>\n\n            <br>\n\n            <label>\n\n              Perdidas\n\n            </label>\n\n          </ion-col>\n\n        </ion-row>\n\n      </ion-grid>\n\n    </div>\n\n    <ion-list>\n\n      <ion-item *ngFor="let contract of (provider|async)?.contracts">\n\n        <img class="post-profile-image" src="assets/imgs/misc/cat.jpg"> {{contract.text}}\n\n        <div class="post-time">{{contract.created_at}} something</div>\n\n        <div class="post-options">\n\n          <ion-icon name="undo"></ion-icon>\n\n        </div>\n\n      </ion-item>\n\n    </ion-list>\n\n  </div>\n\n</ion-content>'/*ion-inline-end:"C:\proys\ionic\labatanga\src\pages\provider\prov-profile\prov-profile.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["AngularFireDatabase"], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_0__Providers_User__["a" /* UserSCV */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["AngularFireDatabase"], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_0__Providers_User__["a" /* UserSCV */]])
     ], ProvProfilePage);
     return ProvProfilePage;
 }());

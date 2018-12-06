@@ -1,8 +1,9 @@
+import { FCM } from '@ionic-native/fcm';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { AngularFireAuth } from 'angularfire2/auth';  
-import { Observable } from 'rxjs/Observable'; 
+import { AngularFireAuth } from 'angularfire2/auth';
+import { Observable } from 'rxjs/Observable';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';  
+import { IonicPage, NavController, NavParams, ToastController, Platform } from 'ionic-angular';
 import { WelcomePage } from "../welcome/welcome";
 
 @IonicPage({
@@ -22,25 +23,31 @@ export class MainPage {
   uid: string
   Contracts: Observable<any>
 
-  constructor(public navCtrl: NavController, 
-              private toast: ToastController,  
-              public afDB: AngularFirestore,
-              public afa: AngularFireAuth, 
-              public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+    private toast: ToastController,
+    public afDB: AngularFirestore,
+    public afa: AngularFireAuth,
+    public fcm: FCM,
+    public plat: Platform,
+    public navParams: NavParams) {
 
     this.uid = navParams.get("uid");
-    this.Contracts = this.afDB.collection("Users").doc( this.uid.toString()).collection("Contracts").valueChanges() 
+    this.Contracts = this.afDB.collection("Users").doc(this.uid.toString()).collection("Contracts").valueChanges()
   }
 
-  ionViewDidEnter(){
-   
-  } 
+  ionViewDidEnter() {
+    if (this.plat.is("cordova"))
+      this.fcm.onTokenRefresh().subscribe(token => {
+        this.afDB.collection("Users").doc(this.uid.toString()).update({
+          token
+        })
+      });
+  }
 
-  public logout()
-  { 
+  public logout() {
     this.afa.auth.signOut().then(() => {
       this.navCtrl.setRoot(WelcomePage);
-   });
+    });
   }
 
   public getContracts(contracts: any): number {

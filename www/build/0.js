@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 554:
+/***/ 555:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9,7 +9,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__categories__ = __webpack_require__(584);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pipes_pipes_module__ = __webpack_require__(327);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pipes_pipes_module__ = __webpack_require__(328);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ngx_order_pipe__ = __webpack_require__(606);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -31,7 +31,7 @@ var CategoriesPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__categories__["a" /* CategoriesPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__categories__["a" /* CategoriesPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__categories__["a" /* CategoriesPage */]),
                 __WEBPACK_IMPORTED_MODULE_3__pipes_pipes_module__["a" /* PipesModule */],
                 __WEBPACK_IMPORTED_MODULE_4_ngx_order_pipe__["a" /* OrderModule */]
             ],
@@ -424,7 +424,7 @@ function localstorage() {
   } catch (e) {}
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(98)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(99)))
 
 /***/ }),
 
@@ -470,11 +470,11 @@ module.exports = function deprecatedMessage(previousUsage, newUsage) {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TimeServicePage; });
 /* unused harmony export TimesEntity */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angularfire2_database__ = __webpack_require__(321);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angularfire2_database__ = __webpack_require__(323);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angularfire2_database___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angularfire2_database__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__list_list__ = __webpack_require__(325);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__list_list__ = __webpack_require__(326);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -568,9 +568,9 @@ var TimeServicePage = /** @class */ (function () {
     };
     TimeServicePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
-            selector: 'page-time-service',template:/*ion-inline-start:"D:\proys\ionic\labatanga\src\pages\time-service\time-service.html"*/'<!--\n\n  Generated template for the TimeServicePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Tiempo de Entrega</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n    <ion-list radio-group [(ngModel)]="timeSel">\n\n        <ion-list-header>\n\n            En que tiempo lo necesitas?\n\n        </ion-list-header> \n\n        <ion-item *ngFor="let t of Times, let i=index">\n\n          <ion-label>{{t.Name}}</ion-label>\n\n          <ion-radio [checked]="i==0" [value]="t.Value" (ionSelect)="CheckIfOther(t.Value)"></ion-radio>\n\n\n\n        </ion-item>\n\n        <ion-item *ngIf="timeSel==\'other\'">  \n\n          <ion-datetime \n\n          (ionChange)="sendAlert()"\n\n          (ionCancel)="timeSelOther=null"\n\n           displayFormat="DD/MM/YYYY HH:mm"\n\n            min="{{min}}"\n\n            cancelText="Cancelar"\n\n            doneText="Aceptar"\n\n            placeholder="Especifique la fecha"\n\n            [(ngModel)]="timeSelOther"></ion-datetime> \n\n        </ion-item>\n\n      </ion-list>  \n\n      \n\n</ion-content>\n\n'/*ion-inline-end:"D:\proys\ionic\labatanga\src\pages\time-service\time-service.html"*/,
+            selector: 'page-time-service',template:/*ion-inline-start:"C:\proys\ionic\labatanga\src\pages\time-service\time-service.html"*/'<!--\n\n  Generated template for the TimeServicePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Tiempo de Entrega</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n    <ion-list radio-group [(ngModel)]="timeSel">\n\n        <ion-list-header>\n\n            En que tiempo lo necesitas?\n\n        </ion-list-header> \n\n        <ion-item *ngFor="let t of Times, let i=index">\n\n          <ion-label>{{t.Name}}</ion-label>\n\n          <ion-radio [checked]="i==0" [value]="t.Value" (ionSelect)="CheckIfOther(t.Value)"></ion-radio>\n\n\n\n        </ion-item>\n\n        <ion-item *ngIf="timeSel==\'other\'">  \n\n          <ion-datetime \n\n          (ionChange)="sendAlert()"\n\n          (ionCancel)="timeSelOther=null"\n\n           displayFormat="DD/MM/YYYY HH:mm"\n\n            min="{{min}}"\n\n            cancelText="Cancelar"\n\n            doneText="Aceptar"\n\n            placeholder="Especifique la fecha"\n\n            [(ngModel)]="timeSelOther"></ion-datetime> \n\n        </ion-item>\n\n      </ion-list>  \n\n      \n\n</ion-content>\n\n'/*ion-inline-end:"C:\proys\ionic\labatanga\src\pages\time-service\time-service.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavParams */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_0_angularfire2_database__["AngularFireDatabase"]])
     ], TimeServicePage);
     return TimeServicePage;
@@ -1132,18 +1132,18 @@ module.exports = function exitPromise(fn, _setTimeout) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoriesPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__chat_chat__ = __webpack_require__(322);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__config_config__ = __webpack_require__(324);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__chat_chat__ = __webpack_require__(173);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__config_config__ = __webpack_require__(325);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sub_categories_sub_categories__ = __webpack_require__(585);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__details_details__ = __webpack_require__(323);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__details_details__ = __webpack_require__(324);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_geolocation__ = __webpack_require__(173);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_geolocation__ = __webpack_require__(174);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_algoliasearch__ = __webpack_require__(574);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_algoliasearch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_algoliasearch__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_angularfire2_firestore__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_angularfire2_firestore___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_angularfire2_firestore__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_operators__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_operators__ = __webpack_require__(15);
 var __assign = (this && this.__assign) || Object.assign || function(t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
         s = arguments[i];
@@ -1268,29 +1268,29 @@ var CategoriesPage = /** @class */ (function () {
         });
     };
     CategoriesPage.prototype.Cotizar = function (prov) {
-        return __awaiter(this, void 0, void 0, function () {
-            var dchat, chat;
-            var _this = this;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.afDB.collection("Chats", function (ref) { return ref
-                            .where("UserUid", "==", _this.navParams.data)
-                            .where("ProviderUid", "==", prov.uid); }).valueChanges().toPromise()];
-                    case 1:
-                        dchat = _a.sent();
-                        if (dchat.length == 0) {
-                            chat = {
-                                UserUid: this.navParams.data,
-                                ProviderUid: prov.uid,
-                                Status: "N",
-                                Date: Date.now()
-                            };
-                            this.afDB.collection("Chats").add(chat);
-                            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_0__chat_chat__["a" /* ChatPage */], { userID: this.navParams.data, provID: prov });
-                        }
-                        return [2 /*return*/];
-                }
-            });
+        var _this = this;
+        this.afDB.collection("Chats", function (ref) { return ref
+            .where("UserUid", "==", _this.navParams.data)
+            .where("ProviderUid", "==", prov.uid); }).valueChanges().subscribe(function (s) {
+            if (s.length == 0) {
+                var message = [];
+                message.push({
+                    Message: "Buen dia",
+                    isProvider: false,
+                    uid: _this.navParams.data,
+                    Date: Date.now()
+                });
+                var chat = {
+                    UserUid: _this.navParams.data,
+                    ProviderUid: prov.uid,
+                    Status: "N",
+                    Date: Date.now(),
+                    Messages: message
+                };
+                _this.afDB.collection("Chats").add(chat).then(function (e) {
+                    _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_0__chat_chat__["a" /* ChatPage */], { chatid: e.id, userID: _this.navParams.data, provID: prov });
+                });
+            }
         });
     };
     CategoriesPage.prototype.getRating = function (rating) {
@@ -1326,12 +1326,16 @@ var CategoriesPage = /** @class */ (function () {
         });
         modal.present();
     };
-    var _a, _b, _c, _d, _e, _f;
     CategoriesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["m" /* Component */])({
-            selector: 'page-categories',template:/*ion-inline-start:"D:\proys\ionic\labatanga\src\pages\categories\categories.html"*/'<ion-header>\n\n\n\n  <!-- <ion-navbar color="primary">\n\n    <ion-title>Categorias</ion-title>\n\n    \n\n  </ion-navbar> -->\n\n  <ion-toolbar color="primary">\n\n\n\n    <ion-title>Categorias</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only color="royal" (click)="OpenSettings()">\n\n        <ion-icon name="md-options"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content class="card-background-page">\n\n  <div>\n\n    <ion-searchbar placeholder="¿Qué estas buscando?" [(ngModel)]="txtsearch" [debounce]="750" [animated]=true\n\n      (ionInput)="getFromAlgolia($event)">\n\n    </ion-searchbar>\n\n  </div>\n\n  <div *ngIf="algoliaSearch">\n\n    <ion-list>\n\n      <ion-item-sliding #slidingItem *ngFor="let prov of algResult">\n\n        <ion-item>\n\n\n\n          <ion-card class="card-borders" (click)="itemTapped($event,prov, prov.$value, prov.$key)">\n\n            <ion-row>\n\n              <ion-col col-4>\n\n                <div item-left class="logo">\n\n                  <img *ngIf="prov.logo" [src]="prov.logo">\n\n                  <img *ngIf="!prov.logo" src="../../assets/imgs/noimage.png">\n\n                </div>\n\n              </ion-col>\n\n              <ion-col col-8>\n\n                <ion-row>\n\n                  <ion-col width-80>\n\n                    <strong> {{prov.CompanyName}}</strong>\n\n                  </ion-col>\n\n                  <ion-col width-30 text-right>\n\n                    <ion-badge *ngIf="getRating(prov.rating)==0" color="secondary">Nuevo</ion-badge>\n\n                    <span *ngIf="getRating(prov.rating)>0">\n\n                      <ion-icon color="yellow" style=" text-shadow: 1px 1px 1px rgb(54, 63, 0);" name="md-star"></ion-icon>\n\n                      <span style="color:black;">{{getRating(prov.rating)}} </span>\n\n                      <span style="color:gray">({{TotalRating(prov.rating)}}) </span>\n\n                    </span>\n\n                  </ion-col>\n\n                </ion-row> \n\n                <ion-card-content>\n\n                  <div class="text-description text-left">\n\n                    {{ ( prov.Description.length>100)? ( prov.Description | slice:0:100)+\'..\':( prov.Description) }}\n\n                  </div>\n\n                  <div class="item-note" item-end>\n\n\n\n                  </div>\n\n                </ion-card-content>\n\n              </ion-col>\n\n            </ion-row>\n\n          </ion-card>\n\n        </ion-item>\n\n        <ion-item-options>\n\n          <button ion-button (click)="Cotizar(prov)">Cotizar</button>\n\n        </ion-item-options>\n\n      </ion-item-sliding>\n\n\n\n    </ion-list>\n\n  </div>\n\n  <div *ngIf="!algoliaSearch && (categories|async)">\n\n    <ion-card *ngFor="let cat of categories|async" (click)="getProviders(cat)">\n\n      <img [src]="\'assets/imgs/categories/\' + cat.img">\n\n      <div class="card-title">{{cat.Name}}</div>\n\n      <!-- <div class="card-subtitle">{{getSubCats(cat)}}</div> -->\n\n    </ion-card>\n\n  </div>\n\n</ion-content>'/*ion-inline-end:"D:\proys\ionic\labatanga\src\pages\categories\categories.html"*/,
+            selector: 'page-categories',template:/*ion-inline-start:"C:\proys\ionic\labatanga\src\pages\categories\categories.html"*/'<ion-header>\n\n\n\n  <!-- <ion-navbar color="primary">\n\n    <ion-title>Categorias</ion-title>\n\n    \n\n  </ion-navbar> -->\n\n  <ion-toolbar color="primary">\n\n\n\n    <ion-title>Categorias</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only color="royal" (click)="OpenSettings()">\n\n        <ion-icon name="md-options"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content class="card-background-page">\n\n  <div>\n\n    <ion-searchbar placeholder="¿Qué estas buscando?" [(ngModel)]="txtsearch" [debounce]="750" [animated]=true\n\n      (ionInput)="getFromAlgolia($event)">\n\n    </ion-searchbar>\n\n  </div>\n\n  <div *ngIf="algoliaSearch">\n\n    <ion-list>\n\n      <ion-item-sliding #slidingItem *ngFor="let prov of algResult">\n\n        <ion-item>\n\n\n\n          <ion-card class="card-borders" (click)="itemTapped($event,prov, prov.$value, prov.$key)">\n\n            <ion-row>\n\n              <ion-col col-4>\n\n                <div item-left class="logo">\n\n                  <img *ngIf="prov.logo" [src]="prov.logo">\n\n                  <img *ngIf="!prov.logo" src="../../assets/imgs/noimage.png">\n\n                </div>\n\n              </ion-col>\n\n              <ion-col col-8>\n\n                <ion-row>\n\n                  <ion-col width-80>\n\n                    <strong> {{prov.CompanyName}}</strong>\n\n                  </ion-col>\n\n                  <ion-col width-30 text-right>\n\n                    <ion-badge *ngIf="getRating(prov.rating)==0" color="secondary">Nuevo</ion-badge>\n\n                    <span *ngIf="getRating(prov.rating)>0">\n\n                      <ion-icon color="yellow" style=" text-shadow: 1px 1px 1px rgb(54, 63, 0);" name="md-star"></ion-icon>\n\n                      <span style="color:black;">{{getRating(prov.rating)}} </span>\n\n                      <span style="color:gray">({{TotalRating(prov.rating)}}) </span>\n\n                    </span>\n\n                  </ion-col>\n\n                </ion-row> \n\n                <ion-card-content>\n\n                  <div class="text-description text-left">\n\n                    {{ ( prov.Description.length>100)? ( prov.Description | slice:0:100)+\'..\':( prov.Description) }}\n\n                  </div>\n\n                  <div class="item-note" item-end>\n\n\n\n                  </div>\n\n                </ion-card-content>\n\n              </ion-col>\n\n            </ion-row>\n\n          </ion-card>\n\n        </ion-item>\n\n        <ion-item-options>\n\n          <button ion-button (click)="Cotizar(prov)">Cotizar</button>\n\n        </ion-item-options>\n\n      </ion-item-sliding>\n\n\n\n    </ion-list>\n\n  </div>\n\n  <div *ngIf="!algoliaSearch && (categories|async)">\n\n    <ion-card *ngFor="let cat of categories|async" (click)="getProviders(cat)">\n\n      <img [src]="\'assets/imgs/categories/\' + cat.img">\n\n      <div class="card-title">{{cat.Name}}</div>\n\n      <!-- <div class="card-subtitle">{{getSubCats(cat)}}</div> -->\n\n    </ion-card>\n\n  </div>\n\n</ion-content>'/*ion-inline-end:"C:\proys\ionic\labatanga\src\pages\categories\categories.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_6__ionic_native_geolocation__["a" /* Geolocation */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__ionic_native_geolocation__["a" /* Geolocation */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["g" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["g" /* ModalController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["j" /* NavParams */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_8_angularfire2_firestore__["AngularFirestore"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_8_angularfire2_firestore__["AngularFirestore"]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["f" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["f" /* LoadingController */]) === "function" && _f || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5_ionic_angular__["j" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_6__ionic_native_geolocation__["a" /* Geolocation */],
+            __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["h" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["k" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_8_angularfire2_firestore__["AngularFirestore"],
+            __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["g" /* LoadingController */]])
     ], CategoriesPage);
     return CategoriesPage;
 }());
@@ -1348,7 +1352,7 @@ var CategoriesPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sub_categories_second_sub_categories_second__ = __webpack_require__(586);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__ = __webpack_require__(321);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__ = __webpack_require__(323);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_database___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angularfire2_database__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__time_service_time_service__ = __webpack_require__(573);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1403,9 +1407,9 @@ var SubCategoriesPage = /** @class */ (function () {
     };
     SubCategoriesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
-            selector: 'page-sub-categories',template:/*ion-inline-start:"D:\proys\ionic\labatanga\src\pages\sub-categories\sub-categories.html"*/'<!--\n\n  Generated template for the SubCategoriesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Sub Categoria</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content class="card-background-page">\n\n    <ion-list *ngIf="SubCategories|async">\n\n      <ion-item *ngFor="let cat of SubCategories|async" (click)="GetSubCategories(cat)"> \n\n        <span class="card-title">{{cat.payload.val().Name}}</span>\n\n        <span text-right float-right class="span-sub-categories">{{getSubCats(cat.payload.val())}}</span>\n\n      </ion-item> \n\n    </ion-list>\n\n  </ion-content>'/*ion-inline-end:"D:\proys\ionic\labatanga\src\pages\sub-categories\sub-categories.html"*/,
+            selector: 'page-sub-categories',template:/*ion-inline-start:"C:\proys\ionic\labatanga\src\pages\sub-categories\sub-categories.html"*/'<!--\n\n  Generated template for the SubCategoriesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Sub Categoria</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content class="card-background-page">\n\n    <ion-list *ngIf="SubCategories|async">\n\n      <ion-item *ngFor="let cat of SubCategories|async" (click)="GetSubCategories(cat)"> \n\n        <span class="card-title">{{cat.payload.val().Name}}</span>\n\n        <span text-right float-right class="span-sub-categories">{{getSubCats(cat.payload.val())}}</span>\n\n      </ion-item> \n\n    </ion-list>\n\n  </ion-content>'/*ion-inline-end:"C:\proys\ionic\labatanga\src\pages\sub-categories\sub-categories.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__["AngularFireDatabase"]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__["AngularFireDatabase"]])
     ], SubCategoriesPage);
     return SubCategoriesPage;
 }());
@@ -1421,7 +1425,7 @@ var SubCategoriesPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SubCategoriesSecondPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__(321);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__(323);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angularfire2_database__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__time_service_time_service__ = __webpack_require__(573);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1464,9 +1468,9 @@ var SubCategoriesSecondPage = /** @class */ (function () {
     };
     SubCategoriesSecondPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-sub-categories-second',template:/*ion-inline-start:"D:\proys\ionic\labatanga\src\pages\sub-categories-second\sub-categories-second.html"*/'<!--\n\n  Generated template for the SubCategoriesSecondPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>SubCategoriesSecond</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content class="card-background-page">\n\n    <ion-list *ngIf="SubCategories|async">\n\n      <ion-item *ngFor="let cat of SubCategories|async" (click)="onClickSubCat(cat)"> \n\n        <span class="card-title">{{cat.Name}}</span> \n\n      </ion-item> \n\n    </ion-list>\n\n  </ion-content>\n\n'/*ion-inline-end:"D:\proys\ionic\labatanga\src\pages\sub-categories-second\sub-categories-second.html"*/,
+            selector: 'page-sub-categories-second',template:/*ion-inline-start:"C:\proys\ionic\labatanga\src\pages\sub-categories-second\sub-categories-second.html"*/'<!--\n\n  Generated template for the SubCategoriesSecondPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>SubCategoriesSecond</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content class="card-background-page">\n\n    <ion-list *ngIf="SubCategories|async">\n\n      <ion-item *ngFor="let cat of SubCategories|async" (click)="onClickSubCat(cat)"> \n\n        <span class="card-title">{{cat.Name}}</span> \n\n      </ion-item> \n\n    </ion-list>\n\n  </ion-content>\n\n'/*ion-inline-end:"C:\proys\ionic\labatanga\src\pages\sub-categories-second\sub-categories-second.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["AngularFireDatabase"]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["AngularFireDatabase"]])
     ], SubCategoriesSecondPage);
     return SubCategoriesSecondPage;
 }());
@@ -4906,7 +4910,7 @@ function removeCredentials(headers) {
   return newHeaders;
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(98)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(99)))
 
 /***/ }),
 
@@ -5725,7 +5729,7 @@ module.exports = function createAlgoliasearch(AlgoliaSearch, uaSuffix) {
   return algoliasearch;
 };
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(98)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(99)))
 
 /***/ }),
 
@@ -6937,7 +6941,7 @@ return Promise$1;
 
 //# sourceMappingURL=es6-promise.map
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(98), __webpack_require__(51)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(99), __webpack_require__(51)))
 
 /***/ }),
 

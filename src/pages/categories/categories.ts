@@ -1,5 +1,5 @@
 import { ChatPage } from './../chat/chat';
-import { ISearchOptions, IChats } from './../../services/Models';
+import { ISearchOptions, IChats, IMessage } from './../../services/Models';
 import { ConfigPage } from './../config/config';
 import { SubCategoriesPage } from './../sub-categories/sub-categories';
 import { DetailsPage } from './../details/details';
@@ -92,21 +92,32 @@ export class CategoriesPage {
     })
   }
 
-  async Cotizar(prov: IProveedor) { 
-    let dchat = await this.afDB.collection<IChats>("Chats", ref => ref
+  Cotizar(prov: IProveedor) {
+    this.afDB.collection<IChats>("Chats", ref => ref
       .where("UserUid", "==", this.navParams.data)
       .where("ProviderUid", "==", prov.uid)
-    ).valueChanges().toPromise()
-    if (dchat.length == 0) {
-      let chat = {
-        UserUid: this.navParams.data,
-        ProviderUid: prov.uid,
-        Status: "N",
-        Date: Date.now()
-      } as IChats
-      this.afDB.collection("Chats").add(chat)
-      this.navCtrl.push(ChatPage, { userID: this.navParams.data, provID: prov })
-    }
+    ).valueChanges().subscribe(s => {
+      if (s.length == 0) {
+        let message = []
+        message.push({
+          Message: "Buen dia",
+          isProvider: false,
+          uid: this.navParams.data,
+          Date: Date.now()
+        } as IMessage)
+        let chat = {
+          UserUid: this.navParams.data,
+          ProviderUid: prov.uid,
+          Status: "N",
+          Date: Date.now(),
+          Messages: message
+        } as IChats
+        this.afDB.collection("Chats").add(chat).then(e=>{
+           this.navCtrl.push(ChatPage, {chatid: e.id, userID: this.navParams.data, provID: prov })
+        })
+       
+      }
+    })
   }
 
   getRating(rating: any) {
